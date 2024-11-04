@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css2/main.css">
+    <link rel="stylesheet" href="css2/leader.css">
+ 
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid"> <!-- Changed to container-fluid -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/ico/apple-icon-114x114.png" width="60" height="60" alt="logo" class="img-responsive">
+            </a>
+    
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="try-index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <a class="dropdown-item" href="try-about1.html">About Us</a>
+                            <a class="dropdown-item" href="try-about2.html">Vision & Values</a>
+                        </div>
+                    </li>
+                    <li id="link-main"  class="nav-item"><a class="nav-link" href="try-leader.html">Our Leaders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="try-product.html">Our Products</a></li>
+                    <li  class="nav-item"><a class="nav-link" href="try-contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+<section id="about" class="section">    
+    <div class="container">        
+        <div class="image" style="position: relative;">
+            <div class="box" >
+                <h3>Our Leader</h3>
+                <p>Meet our experienced and skilled leadership team who drive the success of PEML!</p>
+            </div>            
+            <img src="images/GalleryOriSize/leader.jpg" alt="About Ping Petroleum" width="900" height="500" style="display: block;">        
+        </div>           
+  
+    </div>
+  </section>
+
+<!-- Leadership Team section -->
+<section id="leadership" class="section">
+    <div class="container">
+        <h2>PEML LEADERSHIP TEAM</h2>
+        <br>
+        <div class="leader-row">
+            <!-- Leader 1 -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="images/leaderMarketing/Picture1.jpg" alt="Leader 1" class="img-fluid">
+                </div>
+                <div class="leader-info">
+                    <h4>Tan Sri Dato' Sri Haji Syed Zainal Abidin Syed Mohamed Tahir Jamalullail</h4>
+                    <h5>Chairman</h5>
+                    <p>More than 25 years of leadership experience in energy and automotive industry</p>
+                </div>
+            </div>
+            <!-- Leader 2 -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="images/leaderMarketing/Picture2.jpg" alt="Leader 2" class="img-fluid">
+                </div>
+                <div class="leader-info">
+                    <h4>Muhammad Saifullah Mohd Isa</h4>
+                    <h5>Director</h5>
+                    <p>More than 13 years of experience in financial industry and capital markets</p>
+                </div>
+            </div>
+            <!-- Leader 3 -->
+            <div class="leader-card">
+                <div class="leader-img">
+                    <img src="images/leaderMarketing/Picture3.jpg" alt="Leader 3" class="img-fluid">
+                </div>
+                <div class="leader-info">
+                    <h4>Mohamad Anuar Ebrahim</h4>
+                    <h5>Director / CEO</h5>
+                    <p>More than 30 years of energy trading experience with one of the region's foremost oil producers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Our Office</h3>
+        <ul>
+          <li>Ping Energy Marketing Limited,</li>
+          <li>Office Suite 18-02, Level 18, Ilham Tower, No.8 Jalan Binjai, 50450 Kuala Lumpur</li>
+          <li>+603 4816 8238</li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="OurLeader.html">Our Leaders</a></li>
+          <li><a href="product.html">Our Products</a></li>
+          <li><a href="#contact-section">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="aboutUs_history.html">History</a></li>
+          <li><a href="aboutUs_mission&vission.html">Mission & Vision</a></li>
+          <li><a href="aboutUs_corporate.html">Corporate Overview</a></li>
+        </ul>
+      </div>
+      
+      
+    </div>
+    <div class="footer-copyright">
+        &copy; Ping Energy Marketing Limited 2024. All rights reserved.
+      </div>
+  </footer>
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // Unobserve once it animates in
+                }
+            });
+        }, { threshold: 0.1 }); // 0.1 means it triggers when 10% of the element is in view
+    
+        const leaderCards = document.querySelectorAll('.leader-card');
+        leaderCards.forEach(card => {
+            observer.observe(card); // Observe each leader card
+        });
+    });
+    </script>
+</body>
+
+</html>
