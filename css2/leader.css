@@ -1,0 +1,115 @@
+
+#leadership {
+    padding: 50px 0;
+}
+
+#leadership .container {
+    padding: 0 50px;
+}
+
+#leadership .container h2{
+  position: relative; /* Positioning context for the pseudo-element */
+  font-size: 2em; /* Adjust font size as needed */
+  margin-bottom: 30px; /* Space below the heading */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px;
+  text-align: center;
+}
+
+#leadership .container h2::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the h2 */
+    left: 50%; /* Position it in the middle */
+    transform: translateX(-50%); /* Center it horizontally */
+    bottom: 0; /* Position at the bottom of the heading */
+    width: 20%; /* Set the width of the border to 50% */
+    height: 2px; /* Set the height of the border */
+    background-color: rgb(19, 18, 18); /* Border color */
+}
+
+.leader-row {
+    display: flex;
+    justify-content: space-between; /* Adds space between columns */
+    flex-wrap: wrap; /* Ensures the layout wraps on smaller screens */
+    align-items: stretch; /* Aligns items to have the same height */
+}
+
+.leader-card {
+  background-color: #fff;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  width: 32%; /* Each card will take up approximately 32% of the container's width */
+  margin-bottom: 20px; /* Adds space between rows */
+  transition: all 0.3s ease;
+  display: flex; /* Make the card a flexbox */
+  flex-direction: column; /* Arrange content vertically */
+}
+
+.leader-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leader-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.leader-info {
+  flex-grow: 1; /* Ensures the leader info section takes up all remaining space */
+}
+
+.leader-info h4 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+.leader-info h5 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+.leader-info p {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: justify;
+  margin: 15px 0 5px;
+
+}
+
+.leader-icons {
+    margin: 10px 0;
+}
+
+.leader-icons img {
+    margin: 0 10px;
+    width: 50px; /* Adjust the size as needed */
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .leader-row {
+        flex-direction: column; /* Stacks the cards on top of each other on mobile */
+    }
+
+    .leader-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Initially hide the leader cards */
+.leader-card {
+  opacity: 0;
+  transform: translateY(100px); /* Move the card 100px down */
+  transition: all 0.6s ease; /* Smooth transition */
+}
+
+/* When the card is visible, apply this class */
+.leader-card.show {
+  opacity: 1;
+  transform: translateY(0); /* Move to its normal position */
+}
+

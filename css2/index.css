@@ -1,0 +1,84 @@
+/* General Styles for Snapshot Section */
+#snapshot .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    text-decoration: none;
+  
+  }
+  
+  #snapshot h2 {
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Snapshot Section */
+  #snapshot {
+    padding: 60px 0 110px 0;
+  }
+  
+  /* Flexbox Row */
+  .snapshot-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Snapshot Column */
+  .snapshot-column {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 250px; /* Ensures columns don't shrink too small */
+  }
+  
+  .snapshot-column h3 {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-top: 20px;
+    
+  }
+  
+  .custom-link {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  
+  .snapshot-column h3 a:hover {
+    text-decoration: none; /* Also remove underline when hovered */
+  }
+  
+  .snapshot-column p {
+    font-size: 1rem;
+    color: #555;
+    margin: 15px 0;
+    text-align: justify;
+  }
+  
+  /* Snapshot Image */
+  .snapshot-img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniform image size */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the container */
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .snapshot-row {
+        flex-direction: column;
+    }
+  
+    .snapshot-column {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+  
+    .snapshot-img {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+  }
+  
+  

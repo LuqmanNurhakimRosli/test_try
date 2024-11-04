@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+
+  }
+  
+  /* *************************************************** */
+  /* Navbar Styles */
+  .navbar {
+      font-size: 16px; /* Base font size */
+      padding: 8px 130px; /* Padding for the navbar */
+      border-bottom: 3px solid #53b848; /* Bottom border to match theme */
+      background-color: #f8f9fa; /* Light background color */
+      width: 100%;
+      display: flex;
+      justify-content: space-between; /* Aligns logo and toggler properly */
+      align-items: center; /* Center items vertically */
+      position: sticky;
+      top: 0;
+      z-index: 1000; /* Ensures the navbar stays above other content */
+    }
+    
+    .navbar-toggler {
+      border-color: #53b848; /* Color for the toggler border */
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2859,184,72,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Custom icon for toggler */
+    }
+    
+    .navbar-nav .nav-link {
+      color: #000000; /* Color of navbar links */
+      font-weight: bold; /* Bold text */
+      padding: 10px 15px; /* Padding for links */
+      text-decoration: none; /* Remove underline */
+    }
+    
+    #link-main .nav-link {
+      color: #53b848;
+    }
+    
+    
+    /* Dropdown Menu Styles */
+    .dropdown-menu {
+      background-color: #f8f9fa; /* Background color for dropdown */
+      border: 1px solid #53b848; /* Border color for dropdown */
+    }
+    
+    .dropdown-item {
+      color: #1a1a1a; /* Text color for dropdown items */
+    }
+    
+    .dropdown-item:hover {
+      background-color: #53b848; /* Highlight color on hover */
+      color: white; /* Text color on hover */
+    }
+    
+    /* Dropdown Toggle Styles - Adding Arrow */
+    .navbar-nav .dropdown-toggle {
+      position: relative; /* Positioning for the arrow */
+      display: inline-flex; /* Use flex for alignment */
+      align-items: center; /* Center items vertically */
+    }
+    
+    /* Dropdown Arrow */
+    .navbar-nav .dropdown-toggle::after {
+      display: inline-block;
+      margin-left: 0.5rem; /* Space between link text and arrow */
+      content: "";
+      width: 0; 
+      height: 0; 
+      border-left: 0.4em solid transparent; /* Arrow triangle */
+      border-right: 0.4em solid transparent; /* Arrow triangle */
+      border-top: 0.4em solid #53b848; /* Arrow color and shape */
+      margin-top: -0.1em; /* Adjust vertical alignment */
+    }
+    
+  
+  /* Footer Styles */
+  footer {
+    background-color: #41a336; /* Your desired background color */
+    color: white;
+    padding: 60px 80px;
+    border-radius: 8px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: center; /* Centers the sections horizontally */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    gap: 150px; /* Adds space between sections */
+    max-width: 970px; /* Restrict the width for better centering */
+    margin: 0 auto; /* Centers the entire container */
+    border-radius: 8px; /* Add border radius to the container */
+    overflow: hidden; /* Ensure the border radius is applied correctly */
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px; /* Ensure the sections stay aligned on smaller screens */
+    max-width: 20%;
+    text-align: justify;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-copyright {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start; /* Use flex-start to align items to the left */
+        gap: 30px;
+    }
+  }
+  
+    /* *************************************************************8 */
+    /* About Styles */
+    #about .container {
+      width: 1800px; /* Adjust this to change the container's width */
+      padding: 10px 10px; /* Adjust padding as needed */
+  }
+  
+  
+  #about .image {
+      width: 100%; /* Ensure the image takes full width of the container */
+      height: 540px; /* Adjust the height to make the image bigger */
+      position: relative;
+  }
+  
+  #about .image img {
+      display: block;
+      margin: 0 auto;
+      width: 100%; /* Make image take full width of the container */
+      height: 100%; /* Make image take full height of its parent */
+      max-width: 100%; /* Ensure image scales with container */
+      border-radius: 8px; /* Keep the rounded corners */
+  }
+  
+  #about .box {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Keep the box aligned to the left */
+    transform: translateY(-50%); /* Vertically center the box */
+    background-color: rgba(44, 44, 44, 0.548); /* Semi-transparent black background */
+    color: white; /* White text color */
+    padding: 20px;
+    text-align: center; /* Center the text inside the box */
+    width: 40%; /* Box takes 40% of the image width */
+    height: 100%; /* Box takes the full height of the image */
+    display: flex; /* Make the box a flex container */
+    flex-direction: column; /* Arrange the text in a column */
+    justify-content: center; /* Center the content vertically */
+    border-radius: 10px;
+  }
+  
+  #about .box h3,
+  #about .box p {
+  text-align: justify;
+  }
+  
+  #about .container .image .box h3{
+    font-size: 2.4em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  #about .box p {
+    font-size: 1.3em;
+    font-weight: lighter;
+  }

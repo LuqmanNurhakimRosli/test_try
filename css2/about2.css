@@ -1,0 +1,155 @@
+            @keyframes slide-in {
+            0% {
+                transform: translateX(-100%); /* Start off-screen to the left */
+                opacity: 0; /* Fully transparent */
+            }
+            100% {
+                transform: translateX(0); /* End at its normal position */
+                opacity: 1; /* Fully opaque */
+            }
+            }
+
+                        @keyframes slideInRight {
+                0% {
+                    transform: translateX(100%); /* Start off-screen to the right */
+                    opacity: 0; /* Start invisible */
+                }
+                100% {
+                    transform: translateX(0); /* End in original position */
+                    opacity: 1; /* Fully visible */
+                }
+            }
+
+            #values {
+                padding: 40px 0;
+              }
+              
+              .vission-container {
+                display: flex; /* Flex layout for content and image side by side */
+                justify-content: space-between; /* Space between the content and image */
+                align-items: center; /* Align content and image vertically center */
+                gap: 40px; /* Space between the two sections */
+                max-width: 1200px; /* Maximum width of the container */
+                margin: 0 auto; /* Center container */
+                padding: 0 80px 40px; /* Top, sides, and bottom padding */
+                border-bottom: 3px solid #53b848;
+                animation: slide-in 0.9s ease-out; /* Apply the slide-in animation */
+              
+              }
+              
+              .vission-content {
+                flex: 1; /* Allow content to take up available space */
+                display: block; /* Use block display for normal flow */
+              }
+              
+              #values .vission-content h2 {
+                text-align: left; /* Ensure h2 is aligned to the left */
+                color: #53b848;
+              }
+              
+              #values .vission-content p {
+                text-align: justify; /* Ensure h2 is aligned to the left */
+                padding-right: 20%;
+                text-align: 1rem;
+                color: #555; /* Color for the text */
+              
+              }
+              
+              .vission-img {
+                flex: 1; /* Allow image to take up available space */
+                max-width: 500px; /* Maximum width for the image */
+              }
+              
+              .vission-img img {
+                width: 100%; /* Make the image responsive */
+                height: auto; /* Keep aspect ratio */
+                border-radius: 25px;
+              
+              }
+              
+              #values h2 {
+                font-size: 2em;
+                color: #53b848; /* Dark green for the title */
+                margin-bottom: 10px;
+              }
+              
+              .values-container {
+                display: flex; /* Flex layout for content and image side by side */
+                justify-content: space-between; /* Space between the content and image */
+                align-items: flex-start; /* Align content and image to the top */
+                gap: 40px; /* Space between the two sections */
+                max-width: 1200px; /* Maximum width of the container */
+                margin: 0 auto; /* Center container */
+                padding: 20px 80px; /* Padding for top, bottom, and sides */
+                animation: slideInRight 0.9s ease-out; /* Apply the slide-in animation */
+              
+              }
+              .values-img {
+                flex: 1; /* Allow image to take up available space */
+                padding-top: 10px;
+                max-width: 600px; /* Maximum width for the image */
+              }
+              
+              .values-img img {
+                width: 100%; /* Make the image responsive */
+                height: auto; /* Keep aspect ratio */
+                border-radius: 25px;
+              
+              }
+              
+              .values-content {
+                flex: 1; /* Allow content to take up available space */
+                text-align: left; /* Align text to the left */
+              }
+              
+              .values-content h2 {
+                font-size: 2em;
+                color: #2E5730; /* Dark green for the title */
+                margin-bottom: 10px;
+                text-align: justify;
+                padding-left: 5%;
+              }
+              
+              .values-list {
+                list-style: none; /* Remove default list styles */
+                padding: 0; /* Remove padding */
+                margin: 0; /* Remove margin */
+                max-width: 600px; /* Limit the width of the list */
+              }
+              
+              .values-list li {
+                font-size: 1rem; /* Font size for list items */
+                color: #555; /* Color for the text */
+                line-height: 1.8; /* Line height for better readability */
+                display: flex; /* Flex layout for icons and text */
+                align-items: center; /* Center icon and text vertically */
+                margin-bottom: 20px; /* Space between list items */
+              }
+              
+              /* Icon Styling */
+              .values-list img {
+                width: 34px; /* Icon width */
+                height: 34px; /* Icon height */
+                margin-right: 15px; /* Space between the icon and the text */
+              }
+              
+              /* Responsive Design */
+              @media (max-width: 768px) {
+                #values h2 {
+                  font-size: 28px;
+                }
+                
+                .values-list {
+                  padding-left: 10px;
+                  padding-right: 10px;
+                }
+                
+                .values-list li {
+                  font-size: 16px;
+                }
+                
+                /* Adjust gap between sections on smaller screens */
+                #values .section div {
+                  margin-bottom: 40px; /* Reduces the gap for mobile view */
+                }
+              }
