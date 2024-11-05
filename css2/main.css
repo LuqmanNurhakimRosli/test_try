@@ -193,7 +193,7 @@
   
   #about .box h3,
   #about .box p {
-  text-align: justify;
+  text-align: left;
   }
   
   #about .container .image .box h3{
