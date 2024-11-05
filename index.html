@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css2/main.css">
+    <link rel="stylesheet" href="css2/index.css">
+ 
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid"> <!-- Changed to container-fluid -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/ico/apple-icon-114x114.png" width="60" height="60" alt="logo" class="img-responsive">
+            </a>
+    
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li id="link-main" class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <a class="dropdown-item" href="try-about1.html">About Us</a>
+                            <a class="dropdown-item" href="try-about2.html">Vision & Values</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="try-leader.html">Our Leaders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="try-product.html">Our Products</a></li>
+                    <li  class="nav-item"><a class="nav-link" href="try-contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+
+<section id="about" class="section">    
+    <div class="container">        
+        <div class="image" style="position: relative;">
+            <div class="box" >
+                <h3>Innovating Energy Solutions</h3>
+                <p>We are committed to efficiency, effectiveness, and excellence in all we do.</p>
+            </div>            
+            <img src="images/marketing_bg.jpg" alt="About Ping Petroleum" width="900" height="500" style="display: block;">        
+        </div>           
+  
+    </div>
+  </section>
+
+<!-- Snapshot Section -->
+<section id="snapshot" class="section">
+    <h2>Ping Energy Marketing Limited At Glance</h2>
+    <div class="container">
+        <!-- Snapshot Row -->
+        <div class="snapshot-row">
+            <!-- Column 1 - About Us -->
+            <div class="snapshot-column" style="    border-bottom: 1px solid #928f8f;" >
+                <img src="images/GalleryOriSize/about_us.jpg" alt="About Us" class="snapshot-img">
+                <a href="aboutUs_history.html" class="custom-link"><h3>About Us</h3></a>
+                <p>Established in 2024, Ping Energy Marketing Limited mainly focuses on the 
+                    marketing and trading.</p>
+                <!-- <a href="#" class="btn-link">History | Vision and Values</a> -->
+            </div>
+
+            <!-- Column 2 - Our Leaders -->
+            <div class="snapshot-column" style="    border-bottom: 1px solid #928f8f;" >
+                <img src="images/GalleryOriSize/our_leader.jpg" alt="Our Leaders" class="snapshot-img">
+                <a href="OurLeader.html" class="custom-link"><h3>Our Leaders</h3></a>
+                <p>Meet our experienced and skilled leadership team 
+                    who drive the success of PEML</p>
+                <!-- <a href="#" class="btn-link">Our Leaders</a> -->
+            </div>
+
+            <!-- Column 3 - Product -->
+            <div class="snapshot-column" style="    border-bottom: 1px solid #928f8f;">
+                <img src="images/GalleryOriSize/our_product.jpg" alt="Products" class="snapshot-img">
+                <a href="product.html" class="custom-link"><h3>Our Products</h3></a>
+                <p>In here, we are committed to providing 
+                    you an exceptional oil and gas trading experience. </p>
+                <!-- <a href="#" class="btn-link">Petroleum | Petrochemical</a> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Our Office</h3>
+        <ul>
+          <li>Ping Energy Marketing Limited,</li>
+          <li>Office Suite 18-02, Level 18, Ilham Tower, No.8 Jalan Binjai, 50450 Kuala Lumpur</li>
+          <li>+603 4816 8238</li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="OurLeader.html">Our Leaders</a></li>
+          <li><a href="product.html">Our Products</a></li>
+          <li><a href="#contact-section">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="aboutUs_history.html">History</a></li>
+          <li><a href="aboutUs_mission&vission.html">Mission & Vision</a></li>
+          <li><a href="aboutUs_corporate.html">Corporate Overview</a></li>
+        </ul>
+      </div>
+      
+      
+    </div>
+    <div class="footer-copyright">
+        &copy; Ping Energy Marketing Limited 2024. All rights reserved.
+      </div>
+  </footer>
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // Unobserve once it animates in
+                }
+            });
+        }, { threshold: 0.1 }); // 0.1 means it triggers when 10% of the element is in view
+    
+        const leaderCards = document.querySelectorAll('.leader-card');
+        leaderCards.forEach(card => {
+            observer.observe(card); // Observe each leader card
+        });
+    });
+    </script>
+</body>
+
+</html>
