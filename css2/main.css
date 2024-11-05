@@ -109,13 +109,13 @@ footer {
   height: auto; /* Maintain aspect ratio */
   display: block;
   margin: 0 auto 10px auto; /* Centers image and adds bottom spacing */
-  padding-top: 15px; /* Optional padding */
+  margin-top: 15px; /* Optional padding */
   border-radius: 8px; /* Rounded corners for a softer look */
 }
 
 .footer-section {
   flex: 1;
-  min-width: 200px; /* Minimum width for each section */
+  min-width: 20px; /* Minimum width for each section */
   margin: 10px 20px; /* Adds spacing between sections */
 }
 
@@ -156,3 +156,58 @@ footer {
       text-align: center; /* Centers text in each section */
   }
 }
+
+    /* *************************************************************8 */
+    /* About Styles */
+    #about .container {
+      width: 1800px; /* Adjust this to change the container's width */
+      padding: 10px 10px; /* Adjust padding as needed */
+  }
+  
+  
+  #about .image {
+      width: 100%; /* Ensure the image takes full width of the container */
+      height: 540px; /* Adjust the height to make the image bigger */
+      position: relative;
+  }
+  
+  #about .image img {
+      display: block;
+      margin: 0 auto;
+      width: 100%; /* Make image take full width of the container */
+      height: 100%; /* Make image take full height of its parent */
+      max-width: 100%; /* Ensure image scales with container */
+      border-radius: 8px; /* Keep the rounded corners */
+  }
+  
+  #about .box {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Keep the box aligned to the left */
+    transform: translateY(-50%); /* Vertically center the box */
+    background-color: rgba(44, 44, 44, 0.548); /* Semi-transparent black background */
+    color: white; /* White text color */
+    padding: 20px;
+    text-align: center; /* Center the text inside the box */
+    width: 40%; /* Box takes 40% of the image width */
+    height: 100%; /* Box takes the full height of the image */
+    display: flex; /* Make the box a flex container */
+    flex-direction: column; /* Arrange the text in a column */
+    justify-content: center; /* Center the content vertically */
+    border-radius: 10px;
+  }
+  
+  #about .box h3,
+  #about .box p {
+  text-align: left;
+  }
+  
+  #about .container .image .box h3{
+    font-size: 2.4em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  #about .box p {
+    font-size: 1.3em;
+    font-weight: lighter;
+  }
