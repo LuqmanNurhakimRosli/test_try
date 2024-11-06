@@ -1,0 +1,52 @@
+
+.valuesx {
+    padding: 50px;
+  }
+  
+  .vission-containerx {
+    display: flex; /* Flex layout for content and image side by side */
+    justify-content: space-between; /* Space between the content and image */
+    align-items: center; /* Align content and image vertically center */
+    gap: 40px; /* Space between the two sections */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center container */
+    padding: 20px 80px 40px; /* Top, sides, and bottom padding */
+    border-bottom: 3px solid #53b848;
+    animation: slide-in 0.9s ease-out; /* Apply the slide-in animation */
+  
+  }
+  
+  .vission-contentx {
+    flex: 1; /* Allow content to take up available space */
+    display: block; /* Use block display for normal flow */
+  }
+  
+  .valuesx .vission-contentx h2 {
+    text-align: left ; 
+    font-size: 28px;
+    padding-bottom: 10px;
+    color: #53b848;
+    font-weight: bold;
+  }
+  
+  .valuesx .vission-contentx p {
+    text-align: justify; 
+    padding-right: 20%;
+  font-size: 16px;
+    color: #555; /* Color for the text */
+  
+  }
+  
+  .vission-imgx {
+    flex: 1; /* Allow image to take up available space */
+    max-width: 500px; /* Maximum width for the image */
+  }
+  
+  .vission-imgx img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 25px;
+  
+  }
+
+  

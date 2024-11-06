@@ -1,8 +1,11 @@
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   }
   
+html {
+  font-family: sans-serif;
+}
+
   body {
     margin: 0;
     padding: 0;
@@ -10,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     background-color: #f4f4f9;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 
   }
   
@@ -18,7 +20,7 @@
   /* Navbar Styles */
   .navbar {
       font-size: 16px; /* Base font size */
-      padding: 8px 117px; /* Padding for the navbar */
+      padding: 8px 160px; /* Padding for the navbar */
       border-bottom: 3px solid #53b848; /* Bottom border to match theme */
       background-color: #f8f9fa; /* Light background color */
       width: 100%;
@@ -210,4 +212,67 @@ footer {
   #about .box p {
     font-size: 1.3em;
     font-weight: lighter;
+  }
+
+  #header {
+    padding: 30px;
+  }
+  
+  #header-container {
+    margin: 0 20px;
+  }
+  
+  #header h1 {
+    margin: 0 50px;
+  }
+  
+  .head_title h1{
+    font-size: 2.8rem;
+    font-weight: 400;
+  
+  }
+  
+  
+  #about_us .container {
+    width:85%;              /* Limit width to 70% of the screen */
+    margin: 0 auto;          /* Center the container */
+    padding: 20px 0;         /* Add vertical padding */
+  }
+  
+  .head_content{
+    border-bottom: 1px solid #666;
+  }
+  
+  .head_content h2 {
+    font-size: 1rem;         /* Smaller heading for the "What we do" section */
+    color: #666;             /* Light color for subtitle */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .content {
+    padding-top: 20px;
+    display: flex;
+    gap: 20px;               /* Spacing between left and right sections */
+    align-items: center; /* Align items to the top */
+  }
+  
+.left_side, .right_side {
+  width: 50%;
+}
+
+  /* Left side (Main title) */
+  #about_us h1 {
+    font-size: 2.5rem;       /* Large font size for main heading */
+    font-weight: 400;        /* Set weight for readability */
+    color: #53b848;          /* Dark purple color for main text */
+    line-height: 1.2;        /* Tight line height */
+  }
+  
+  /* Right side (Paragraphs) */
+  #about_us p {
+    font-size: 1rem;         /* Standard font size for body text */
+    color: #666;             /* Slightly lighter color for readability */
+    line-height: 1.6;        /* Line height for better readability */
+    margin-bottom: 1rem;     /* Space between paragraphs */
   }
