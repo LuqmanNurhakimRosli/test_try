@@ -49,4 +49,39 @@
   
   }
 
+  /* Boxes container */
+  .boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+    padding: 2rem 0;
+  }
   
+  /* Individual box */
+  .box {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #666; /* Border color */
+    border-radius: 15px;
+    color: #ffffff;
+  }
+  
+  .box img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .box h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .box p {
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.5;
+  }

@@ -20,6 +20,18 @@ html {
   color: #53b848;
   }
   
+  #header {
+    padding: 30px;
+  }
+  
+  #header-container {
+    margin: 0 20px;
+  }
+  
+  #header h1 {
+    margin: 0 50px;
+  }
+  
   /* *************************************************** */
   /* Navbar Styles */
   .navbar {
@@ -137,7 +149,7 @@ footer {
 }
 
 .footer-section ul li {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .footer-section a {
@@ -218,18 +230,6 @@ footer {
     font-weight: lighter;
   }
 
-  #header {
-    padding: 30px;
-  }
-  
-  #header-container {
-    margin: 0 20px;
-  }
-  
-  #header h1 {
-    margin: 0 50px;
-  }
-  
   .head_title h1{
     font-size: 2.8rem;
     font-weight: 400;
@@ -258,7 +258,6 @@ footer {
     padding-top: 20px;
     display: flex;
     gap: 20px;               /* Spacing between left and right sections */
-    align-items: center; /* Align items to the top */
   }
   
 .left_side, .right_side {
@@ -280,3 +279,4 @@ footer {
     line-height: 1.6;        /* Line height for better readability */
     margin-bottom: 1rem;     /* Space between paragraphs */
   }
+
