@@ -37,77 +37,134 @@ html {
   }
   
   /* *************************************************** */
-  /* Navbar Styles */
+/* Ensure the navbar spans the full width of the screen */
+.container-fluid {
+  padding: 0; /* Remove default padding */
+  margin: 0;  /* Remove any margin */
+}
+
+/* Adjust the spacing between navbar rows */
+.navbar {
+  font-size: 16px; /* Base font size */
+  padding: 8px 160px; /* Padding for the navbar */
+  background-color: #ffffff; /* Light background color */
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Aligns logo and toggler properly */
+  align-items: center; /* Center items vertically */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  border-bottom: 1px solid #bec4c9;
+}
+
+/* Styling for navbar-toggler button */
+.navbar-toggler {
+  border-color: #53b848; /* Color for the toggler border */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2859,184,72,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Custom icon for toggler */
+}
+
+.navbar-brand {
+  padding: 0.08rem; /* Adjust padding to control size */
+}
+
+.navbar-brand img {
+  max-width: 100px; /* Controls logo size */
+  height: auto; /* Maintain aspect ratio */
+  border-right: 1px solid #bec4c9;
+}
+
+.navbar-nav .nav-link {
+  color: #000000; /* Color of navbar links */
+  font-weight: bold; /* Bold text */
+  padding: 10px 15px; /* Padding for links */
+  text-decoration: none; /* Remove underline */
+}
+
+#link-main .nav-link {
+  color: #53b848;
+}
+
+/* Hover Dropdown Menu */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: none; /* Hide dropdown by default */
+  background-color: #f8f9fa; /* Background color for dropdown */
+  border: 1px solid #53b848; /* Border color for dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow to dropdown */
+  margin-top: 0.5rem; /* Space between dropdown and nav item */
+}
+
+.dropdown-item {
+  color: #1a1a1a; /* Text color for dropdown items */
+  padding: 10px 20px; /* Padding for dropdown items */
+}
+
+.dropdown-item:hover {
+  background-color: #53b848; /* Highlight color on hover */
+  color: white; /* Text color on hover */
+}
+
+/* Dropdown Toggle Arrow */
+.navbar-nav .dropdown-toggle {
+  position: relative; /* Positioning for the arrow */
+  display: inline-flex; /* Use flex for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-nav .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.5rem; /* Space between link text and arrow */
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-left: 0.4em solid transparent; /* Arrow triangle */
+  border-right: 0.4em solid transparent; /* Arrow triangle */
+  border-top: 0.4em solid #53b848; /* Arrow color and shape */
+  margin-top: -0.1em; /* Adjust vertical alignment */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
   .navbar {
-      font-size: 16px; /* Base font size */
-      padding: 8px 160px; /* Padding for the navbar */
-      border-bottom: 3px solid #53b848; /* Bottom border to match theme */
-      background-color: #f8f9fa; /* Light background color */
-      width: 100%;
-      display: flex;
-      justify-content: space-between; /* Aligns logo and toggler properly */
-      align-items: center; /* Center items vertically */
-      position: sticky;
-      top: 0;
-      z-index: 1000; /* Ensures the navbar stays above other content */
-    }
-    
-    .navbar-toggler {
-      border-color: #53b848; /* Color for the toggler border */
-    }
-    
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2859,184,72,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Custom icon for toggler */
-    }
-    
-    .navbar-nav .nav-link {
-      color: #000000; /* Color of navbar links */
-      font-weight: bold; /* Bold text */
-      padding: 10px 15px; /* Padding for links */
-      text-decoration: none; /* Remove underline */
-    }
-    
-    #link-main .nav-link {
-      color: #53b848;
-    }
-    
-    
-    /* Dropdown Menu Styles */
-    .dropdown-menu {
-      background-color: #f8f9fa; /* Background color for dropdown */
-      border: 1px solid #53b848; /* Border color for dropdown */
-    }
-    
-    .dropdown-item {
-      color: #1a1a1a; /* Text color for dropdown items */
-    }
-    
-    .dropdown-item:hover {
-      background-color: #53b848; /* Highlight color on hover */
-      color: white; /* Text color on hover */
-    }
-    
-    /* Dropdown Toggle Styles - Adding Arrow */
-    .navbar-nav .dropdown-toggle {
-      position: relative; /* Positioning for the arrow */
-      display: inline-flex; /* Use flex for alignment */
-      align-items: center; /* Center items vertically */
-    }
-    
-    /* Dropdown Arrow */
-    .navbar-nav .dropdown-toggle::after {
-      display: inline-block;
-      margin-left: 0.5rem; /* Space between link text and arrow */
-      content: "";
-      width: 0; 
-      height: 0; 
-      border-left: 0.4em solid transparent; /* Arrow triangle */
-      border-right: 0.4em solid transparent; /* Arrow triangle */
-      border-top: 0.4em solid #53b848; /* Arrow color and shape */
-      margin-top: -0.1em; /* Adjust vertical alignment */
-    }
-    
-  
+      padding: 8px 20px; /* Reduced padding on smaller screens */
+  }
+  .navbar-brand img {
+      max-width: 80px; /* Smaller logo on mobile */
+  }
+  .navbar-nav .nav-link {
+      padding: 8px 12px; /* Adjust link padding on mobile */
+  }
+}
+
+/* Mini navbar under the main navbar */
+.under-nav {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 0 275px;
+  width: 100%;
+  gap: 17px;
+}
+
+.under-nav .nav-link {
+  font-size: 14px;
+  color: #000000;
+  font-weight: normal;
+}
+
+.under-nav .nav-link#border-green {
+  border-bottom: 2px solid #53b848;
+}
+
+/* ---------------------------------------------------------------------- */
 /* Footer Styles */
 footer {
   background-color: #dee4e9;
@@ -255,7 +312,6 @@ footer {
     font-size: 1rem;         /* Smaller heading for the "What we do" section */
     color: #666;             /* Light color for subtitle */
     margin-bottom: 10px;
-    text-transform: uppercase;
   }
   
   .content {
@@ -274,7 +330,6 @@ footer {
     font-weight: 400;        /* Set weight for readability */
     color: #53b848;          /* Dark purple color for main text */
     line-height: 1.2;        /* Tight line height */
-    text-align: right; 
   }
   
   /* Right side (Paragraphs) */
