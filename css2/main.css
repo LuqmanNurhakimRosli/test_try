@@ -72,9 +72,10 @@ html {
 }
 
 .navbar-brand img {
-  max-width: 100px; /* Controls logo size */
+  max-width: 120px; /* Controls logo size */
   height: auto; /* Maintain aspect ratio */
-  border-right: 1px solid #bec4c9;
+  /* border-right: 1px solid #bec4c9; */
+  margin-right: 2.5rem;
 }
 
 .navbar-nav .nav-link {
@@ -227,7 +228,7 @@ footer {
 }
 
 .footer-copyright {
-  margin-top: 20px;
+  margin-top: 50px;
   text-align: center;
   font-size: 0.8em;
 }
@@ -288,11 +289,12 @@ footer {
   }
   
   #about .container .image .box h3{
-    font-size: 2.4em;
+    font-size: 2.9em;
+    font-weight: bolder;
   }
   
   #about .box p {
-    font-size: 1.3em;
+    font-size: 1.0em;
     font-weight: 200;
   }
 
