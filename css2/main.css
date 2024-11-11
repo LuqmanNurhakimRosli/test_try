@@ -158,6 +158,7 @@ html {
   color: #000000;
   font-weight: normal;
   padding: 5px 10px;
+  margin-left: 6px;
 }
 
 .under-nav .nav-link#border-green {

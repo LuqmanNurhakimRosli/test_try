@@ -4,6 +4,8 @@
     margin: 20px 0; /* Adds spacing between header and contact container */
     padding-left: 13%;
     color: #53b848;
+    border-bottom: 1px solid #bec4c9;
+    width: 80%;
   }
   
   .contact-one {
@@ -13,24 +15,21 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   /* Ensure styles apply whether or not .contact-one is present */
-  .section-container .contact-info,
-  .contact-one .contact-info {
+ #contact .contact-info,
+  #contact .contact-info {
     flex: 1;
     min-width: 0;
     padding: 20px;
     background-color: #f5f5f5;
-    border-right: 1px solid #ccc;
-    border-radius: 8px 0 0 8px;
+    border-right: 2.5px solid #bec4c9;
   }
   
-  .section-container .contact-form,
-  .contact-one .contact-form {
+  #contact .contact-form,
+  #contact .contact-form {
     flex: 2;
     min-width: 0;
     padding: 20px;
@@ -87,3 +86,50 @@
         border-radius: 0 0 8px 8px;
     }
   }
+
+  
+  #contact .container {
+    width:85%;              /* Limit width to 70% of the screen */
+    margin: 0 auto;          /* Center the container */
+    padding: 20px 0;         /* Add vertical padding */
+  }
+  
+  #contact .head_content{
+    border-bottom: 1px solid #666;
+  }
+  
+  #contact .head_content h2 {
+    font-size: 2.5rem;         /* Smaller heading for the "What we do" section */
+    color: #666;             /* Light color for subtitle */
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    padding-top: 20px;
+    display: flex;
+    gap: 25px;               /* Spacing between left and right sections */
+  }
+  
+#contact .left_side{
+  width: 35%;
+}
+#contact .right_side {
+  width: auto !important;
+}
+
+  /* Left side (Main title) */
+  #contact h1 {
+    font-size: 2.5rem;       /* Large font size for main heading */
+    font-weight: 400;        /* Set weight for readability */
+    color: #53b848;          /* Dark purple color for main text */
+    line-height: 1.2;        /* Tight line height */
+  }
+  
+  /* Right side (Paragraphs) */
+  #contact p {
+    font-size: 1rem;         /* Standard font size for body text */
+    color: #666;             /* Slightly lighter color for readability */
+    line-height: 1.6;        /* Line height for better readability */
+    margin-bottom: 1rem;     /* Space between paragraphs */
+  }
+
