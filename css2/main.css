@@ -170,7 +170,6 @@ footer {
   background-color: #dee4e9;
   color: black;
   padding: 40px 20px;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   border-radius: 8px;
 }
 
@@ -283,7 +282,6 @@ footer {
   
   #about .container .image .box h3{
     font-size: 2.4em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   #about .box p {
