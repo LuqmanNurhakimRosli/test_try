@@ -203,7 +203,10 @@ footer {
   font-size: 20px;
   font-weight: bold;
 }
-
+.footer-section h4 {
+  font-size: 13px;
+  font-weight: bold;
+}
 .footer-section ul {
   list-style: none;
   padding: 0;
@@ -211,6 +214,7 @@ footer {
 
 .footer-section ul li {
   margin-bottom: 2px;
+  font-size: 11px;
 }
 
 .footer-section a {
@@ -225,7 +229,7 @@ footer {
 .footer-copyright {
   margin-top: 20px;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 @media (max-width: 768px) {
@@ -279,6 +283,8 @@ footer {
   #about .box h3,
   #about .box p {
   text-align: left;
+  color: #ffffff;
+
   }
   
   #about .container .image .box h3{
@@ -287,7 +293,7 @@ footer {
   
   #about .box p {
     font-size: 1.3em;
-    font-weight: lighter;
+    font-weight: 200;
   }
 
   .head_title h1{
@@ -296,6 +302,9 @@ footer {
   
   }
   
+  #about_us{
+    margin: 20px 0;
+  }
   
   #about_us .container {
     width:85%;              /* Limit width to 70% of the screen */

@@ -1,110 +1,108 @@
-            h2 {
-                position: relative; /* Positioning context for the pseudo-element */
-                font-size: 2em; /* Adjust font size as needed */
-                margin-bottom: 20px; /* Space below the heading */
-                padding: 20px 0;
-                text-align: center;
-            }
+.production-section h2 {
+    position: relative; /* Positioning context for the pseudo-element */
+    font-size: 2em; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space below the heading */
+    padding: 20px 0;
+    text-align: center;
+}
 
-            /* Pseudo-element for the bottom border of h2 */
-            h2::after {
-                content: ""; /* Required for the pseudo-element */
-                position: absolute; /* Position it relative to the h2 */
-                left: 50%; /* Position it in the middle */
-                transform: translateX(-50%); /* Center it horizontally */
-                bottom: 0; /* Position at the bottom of the heading */
-                width: 10%; /* Set the width of the border to 50% */
-                height: 2px; /* Set the height of the border */
-                background-color: rgb(29, 29, 29); /* Border color */
-            }
-            .second h2::after {
-                content: ""; /* Required for the pseudo-element */
-                position: absolute; /* Position it relative to the h2 */
-                left: 50%; /* Position it in the middle */
-                transform: translateX(-50%); /* Center it horizontally */
-                bottom: 0; /* Position at the bottom of the heading */
-                width: 10%; /* Set the width of the border to 50% */
-                height: 2px; /* Set the height of the border */
-                background-color: rgb(29, 29, 29); /* Border color */
-            }
-            
-                .production-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr); /* 3 columns */
-                gap: 40px;
-                padding:0 100px 60px ;
-            }
-                .production-item {
-            position: relative; /* Positioning context for the pseudo-element */
-            background-color: transparent !important;
-            padding: 20px;
-            text-align: justify;
-        }
-            /* Pseudo-element for the bottom border */
-            .production-item::after {
-                content: ""; /* Required for the pseudo-element */
-                position: absolute; /* Position it relative to the parent */
-                left: 50%; /* Position it in the middle */
-                transform: translateX(-90%); /* Center it horizontally */
-                bottom: 0; /* Position at the bottom of the item */
-                width: 50%; /* Set the width of the border to 50% */
-                height: 2px; /* Set the height of the border */
-                background-color: rgb(0, 0, 0); /* Border color */
-            }
+/* Pseudo-element for the bottom border of h2 */
+.production-section h2::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the h2 */
+    left: 50%; /* Position it in the middle */
+    transform: translateX(-50%); /* Center it horizontally */
+    bottom: 0; /* Position at the bottom of the heading */
+    width: 10%; /* Set the width of the border to 50% */
+    height: 2px; /* Set the height of the border */
+    background-color: rgb(29, 29, 29); /* Border color */
+}
 
-            .production-items {
-            position: relative; /* Positioning context for the pseudo-element */
-            background-color: transparent !important;
-            padding: 20px;
-            text-align: justify;
-        }
-            /* Pseudo-element for the bottom border */
-            .production-items::after {
-                content: ""; /* Required for the pseudo-element */
-                position: absolute; /* Position it relative to the parent */
-                left: 50%; /* Position it in the middle */
-                transform: translateX(-90%); /* Center it horizontally */
-                bottom: 0; /* Position at the bottom of the item */
-                width: 50%; /* Set the width of the border to 50% */
-                height: 2px; /* Set the height of the border */
-                background-color: rgb(29, 25, 25); /* Border color */
-            }
-            .production-items img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
-        }
-        
-        .production-item img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
-        }
-        .production-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .production-text {
-            font-size: 14px;
-            line-height: 1.5;
-            /* width: 85%; */
+.production-section .second h2::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the h2 */
+    left: 50%; /* Position it in the middle */
+    transform: translateX(-50%); /* Center it horizontally */
+    bottom: 0; /* Position at the bottom of the heading */
+    width: 10%; /* Set the width of the border to 50% */
+    height: 2px; /* Set the height of the border */
+    background-color: rgb(29, 29, 29); /* Border color */
+}
 
-        }
-        .production-row {
-            display: contents;
+.production-section .production-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 40px;
+    padding: 0 100px 60px;
+}
 
-        }
+.production-section .production-item {
+    position: relative; /* Positioning context for the pseudo-element */
+    background-color: transparent !important;
+    padding: 20px;
+    text-align: justify;
+}
 
-        .production-row:last-child {
-                display: flex; /* Change to flex to center the single item */
-                justify-content: center; /* Center the item */
-                grid-column: span 3; /* Span all three columns */
-            }
-                    
-        @media screen and (max-width: 768px) {
-            .production-container {
-                grid-template-columns: 1fr; /* Stack on small screens */
-            }
-        }
+/* Pseudo-element for the bottom border */
+.production-section .production-item::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the parent */
+    left: 50%; /* Position it in the middle */
+    transform: translateX(-90%); /* Center it horizontally */
+    bottom: 0; /* Position at the bottom of the item */
+    width: 50%; /* Set the width of the border to 50% */
+    height: 2px; /* Set the height of the border */
+    background-color: rgb(0, 0, 0); /* Border color */
+}
 
+.production-section .production-items {
+    position: relative; /* Positioning context for the pseudo-element */
+    background-color: transparent !important;
+    padding: 20px;
+    text-align: justify;
+}
+
+/* Pseudo-element for the bottom border */
+.production-section .production-items::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the parent */
+    left: 50%; /* Position it in the middle */
+    transform: translateX(-90%); /* Center it horizontally */
+    bottom: 0; /* Position at the bottom of the item */
+    width: 50%; /* Set the width of the border to 50% */
+    height: 2px; /* Set the height of the border */
+    background-color: rgb(29, 25, 25); /* Border color */
+}
+
+.production-section .production-items img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.production-section .production-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.production-section .production-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.production-section .production-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.production-section .production-row {
+    display: contents;
+}
+
+@media screen and (max-width: 768px) {
+    .production-section .production-container {
+        grid-template-columns: 1fr; /* Stack on small screens */
+    }
+}

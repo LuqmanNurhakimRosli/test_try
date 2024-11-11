@@ -1,10 +1,12 @@
- 
+ #contact {
+  margin: 50px 0;
+ }
   .section-container .main-header {
     font-size: 3em;
     margin: 20px 0; /* Adds spacing between header and contact container */
     padding-left: 13%;
     color: #53b848;
-    border-bottom: 1px solid #bec4c9;
+    border-bottom: 1px solid #000000;
     width: 80%;
   }
   
@@ -25,7 +27,7 @@
     min-width: 0;
     padding: 20px;
     background-color: #f5f5f5;
-    border-right: 2.5px solid #bec4c9;
+    border-right: 1px solid #666;
   }
   
   #contact .contact-form,
