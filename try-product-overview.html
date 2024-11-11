@@ -12,44 +12,49 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid"> <!-- Changed to container-fluid -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- First Row Container -->
+        <div class="container-fluid d-flex align-items-center">
+            <!-- Logo -->
             <a class="navbar-brand" href="index.html">
-                <img src="images/ico/apple-icon-114x114.png" width="60" height="60" alt="logo" class="img-responsive">
+                <img src="images/ping mark.png" alt="logo" class="img-responsive">
             </a>
     
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Toggler button for mobile view -->
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavRow1" aria-controls="navbarNavRow1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li  class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <!-- First Row Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNavRow1">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            About Us
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <a class="dropdown-item" href="try-about1.html">Overview</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button">About Us</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="about_overview.html">Overview</a>
                             <a class="dropdown-item" href="try-leader.html">Our Leaders</a>
-                            <a class="dropdown-item" href="try-about2.html">Vision & Values</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color:#53b848;">
-                            Businesses
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <a class="dropdown-item" href="try-product.html">Overview</a>
-                            <a class="dropdown-item" href="try-product.html">Petroleum</a>
-                            <a class="dropdown-item" href="try-product.html">Petrochemical</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="businessDropdown" role="button">Businesses</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="try-product-overview.html">Overview</a>
+                            <a class="dropdown-item" href="try-product-petro.html">Petroleum</a>
+                            <a class="dropdown-item" href="try-product-petroChe.html">Petrochemical</a>
                         </div>
                     </li>
-                    <li  class="nav-item"><a class="nav-link" href="try-contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="try-contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-</nav>
+    </nav>
+
+    <div class="under-nav">
+        <a class="nav-link" id="border-green" href="try-product-overview.html">Overview</a>
+        <a class="nav-link" href="try-product-petro.html">Petroleum</a>
+        <a class="nav-link" href="try-product-petroChe.html">Petrochemical</a>
+    </div>
 
 <section id="about" class="section">    
     <div class="container">        
@@ -160,13 +165,19 @@
         </div>
     </div>    
 </section>
+
+
+
 <footer>
     <div class="footer-container">
-      <div class="footer-section">
+        <div class="footer-section">
+            <img src="images/ping mark.png" alt="">
+          </div>
+      <div class="footer-section" style="padding-right: 35px;">
         <h3>Our Office</h3>
         <ul>
-          <li>Ping Energy Marketing Limited,</li>
-          <li>Office Suite 18-02, Level 18, Ilham Tower, No.8 Jalan Binjai, 50450 Kuala Lumpur</li>
+          <li style="font-weight: bold;">Ping Energy Marketing Limited</li>
+          <li>Office Suite 18-02, Level 18, <br>Ilham Tower, No.8 Jalan Binjai, 50450 Kuala Lumpur, Malaysia</li>
           <li>+603 4816 8238</li>
         </ul>
       </div>
@@ -174,22 +185,12 @@
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="OurLeader.html">Our Leaders</a></li>
-          <li><a href="product.html">Our Products</a></li>
-          <li><a href="#contact-section">Contact Us</a></li>
+          <li><a href="try-leader.html">Our Leaders</a></li>
+          <li><a href="try-product-overview.html">Our Products</a></li>
+          <li><a href="try-contact.html">Contact Us</a></li>
         </ul>
       </div>
-  
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <ul>
-          <li><a href="aboutUs_history.html">History</a></li>
-          <li><a href="aboutUs_mission&vission.html">Mission & Vision</a></li>
-          <li><a href="aboutUs_corporate.html">Corporate Overview</a></li>
-        </ul>
-      </div>
-      
-      
+ 
     </div>
     <div class="footer-copyright">
         &copy; Ping Energy Marketing Limited 2024. All rights reserved.

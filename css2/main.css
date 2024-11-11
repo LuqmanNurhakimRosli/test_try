@@ -149,15 +149,15 @@ html {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  padding: 0 275px;
+  padding: 0 165px;
   width: 100%;
-  gap: 17px;
 }
 
 .under-nav .nav-link {
   font-size: 14px;
   color: #000000;
   font-weight: normal;
+  padding: 5px 10px;
 }
 
 .under-nav .nav-link#border-green {
