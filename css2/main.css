@@ -200,8 +200,12 @@ footer {
   margin: 0  40px ;
 }
 
+#office {
+  width: 120%;
+}
+
 #possition {
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .footer-section h3 {
@@ -311,12 +315,13 @@ footer {
   
   #about_us{
     margin: 20px 0;
+    padding-right: 40px;
   }
   
   #about_us .container {
     width:85%;              /* Limit width to 70% of the screen */
     margin: 0 auto;          /* Center the container */
-    padding: 20px 0;         /* Add vertical padding */
+    padding: 20px 0;  
   }
   
   .head_content{
