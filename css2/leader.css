@@ -13,6 +13,7 @@
   margin-bottom: 30px; /* Space below the heading */
   padding: 10px;
   text-align: center;
+  font-weight: bolder;
 }
 
 #leadership .container h2::after {
