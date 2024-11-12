@@ -78,29 +78,27 @@ html {
   margin-right: 2.5rem;
 }
 
-.navbar-nav .nav-link {
-  color: #000000; /* Color of navbar links */
-  font-weight: bold; /* Bold text */
+
+.navbar-light .navbar-nav .nav-link {
+  color: #181616; /* Color of navbar links */
+  font-weight: bolder; /* Bold text */
   padding: 10px 15px; /* Padding for links */
   text-decoration: none; /* Remove underline */
 }
+.navbar-nav .nav-link {
+  margin-right: 15px; /* Adjust value as needed for spacing */
+}
+
 
 #link-main .nav-link {
   color: #53b848;
 }
 
-/* Hover Dropdown Menu */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block; /* Show dropdown on hover */
-}
-
 /* Dropdown Menu Styling */
 .dropdown-menu {
-  display: none; /* Hide dropdown by default */
   background-color: #f8f9fa; /* Background color for dropdown */
   border: 1px solid #53b848; /* Border color for dropdown */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow to dropdown */
-  margin-top: 0.5rem; /* Space between dropdown and nav item */
 }
 
 .dropdown-item {
@@ -111,6 +109,7 @@ html {
 .dropdown-item:hover {
   background-color: #53b848; /* Highlight color on hover */
   color: white; /* Text color on hover */
+
 }
 
 /* Dropdown Toggle Arrow */
@@ -118,6 +117,7 @@ html {
   position: relative; /* Positioning for the arrow */
   display: inline-flex; /* Use flex for alignment */
   align-items: center; /* Center items vertically */
+  
 }
 
 .navbar-nav .dropdown-toggle::after {
@@ -171,7 +171,7 @@ html {
 footer {
   background-color: #dee4e9;
   color: black;
-  padding: 40px 20px;
+  padding: 20px 20px 10px;
   border-radius: 8px;
 }
 
@@ -189,14 +189,19 @@ footer {
   height: auto; /* Maintain aspect ratio */
   display: block;
   margin: 0 auto 10px auto; /* Centers image and adds bottom spacing */
-  margin-top: 15px; /* Optional padding */
   border-radius: 8px; /* Rounded corners for a softer look */
 }
 
 .footer-section {
   flex: 1;
   min-width: 20px; /* Minimum width for each section */
-  margin: 10px 20px; /* Adds spacing between sections */
+  padding-top: 30px;
+  height: auto; /* Maintain aspect ratio */
+  margin: 0  40px ;
+}
+
+#possition {
+  margin-top: 15px;
 }
 
 .footer-section h3 {
@@ -228,7 +233,7 @@ footer {
 }
 
 .footer-copyright {
-  margin-top: 50px;
+  margin-top: 90px;
   text-align: center;
   font-size: 0.8em;
 }
