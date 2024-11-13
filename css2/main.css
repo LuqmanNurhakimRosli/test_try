@@ -197,11 +197,15 @@ footer {
   min-width: 20px; /* Minimum width for each section */
   padding-top: 30px;
   height: auto; /* Maintain aspect ratio */
-  margin: 0  40px ;
+  margin: 0  50px ;
 }
 
 #office {
   width: 120%;
+}
+
+#email {
+  margin-top: 10px;
 }
 
 #possition {
@@ -223,7 +227,7 @@ footer {
 }
 
 .footer-section ul li {
-  margin-bottom: 2px;
+  margin-bottom: 0px;
   font-size: 11px;
 }
 

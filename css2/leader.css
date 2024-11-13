@@ -3,8 +3,17 @@
     padding: 50px 0;
 }
 
+#names {
+  padding-top: 10px !important;
+
+}
+
+#director-name{
+  margin-top: 34px !important;
+}
+
 #leadership .container {
-    padding: 0 50px;
+    padding: 0 69px; 
 }
 
 #leadership .container h2{

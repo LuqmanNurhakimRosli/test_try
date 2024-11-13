@@ -11,7 +11,6 @@
     max-width: 1200px; /* Maximum width of the container */
     margin: 0 auto; /* Center container */
     padding: 20px 80px 40px; /* Top, sides, and bottom padding */
-    border-bottom: 3px solid #53b848;
     animation: slide-in 0.9s ease-out; /* Apply the slide-in animation */
   
   }
