@@ -1,5 +1,5 @@
  #contact {
-  margin: 50px 0;
+  margin: 10px 0 50px;
  }
   .section-container .main-header {
     font-size: 3em;
@@ -97,6 +97,7 @@
   
   #contact .head_content{
     border-bottom: 1px solid #666;
+    padding-bottom: 20px;
   }
   
   #contact .head_content h2 {
