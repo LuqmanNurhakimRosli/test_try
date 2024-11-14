@@ -171,16 +171,19 @@ html {
 footer {
   background-color: #dee4e9;
   color: black;
-  padding: 20px 0px 10px 25px;
+  padding: 20px 0 10px 20px;
   border-radius: 8px;
+  max-width: 980px; /* Adjust based on your layout */
+  margin: 0 auto; /* Center aligns within the container */
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-around; /* Space items evenly */
-  align-items: flex-start; /* Aligns items to the top */
-  flex-wrap: wrap; /* Ensures responsive wrapping */
-  max-width: 1000px; /* Adjust for better centering */
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 100%; /* Ensure it aligns with the footer's width */
+  padding: 0 20px; /* Adjust if needed */
   margin: 0 auto;
 }
 
@@ -198,7 +201,7 @@ footer {
   padding-top: 30px;
   height: auto; /* Maintain aspect ratio */
   margin: 0  78px ;
-}
+} 
 
 #office {
   width: 120%;
