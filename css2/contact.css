@@ -89,6 +89,9 @@
     }
   }
 
+  #contact a{
+    color: #666;
+  }
   
   #contact .container {
     margin: 0 auto;          /* Center the container */

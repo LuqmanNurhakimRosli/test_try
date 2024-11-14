@@ -1,6 +1,7 @@
 
 #leadership {
-    padding: 50px 0;
+    padding: 40px 0;
+    margin-left: 17px;
 }
 
 #names {
@@ -9,11 +10,15 @@
 }
 
 #director-name{
-  margin-top: 34px !important;
+  margin-top: 37px !important;
+}
+
+#director-name-saiful {
+  margin-top: 40px !important;
 }
 
 #leadership .container {
-    padding: 0 69px; 
+    padding: 0 70px ;
 }
 
 #leadership .container h2{
@@ -38,9 +43,9 @@
 
 .leader-row {
     display: flex;
-    justify-content: space-between; /* Adds space between columns */
     flex-wrap: wrap; /* Ensures the layout wraps on smaller screens */
     align-items: stretch; /* Aligns items to have the same height */
+    gap: 20px;
 }
 
 .leader-card {
@@ -48,8 +53,8 @@
   border: 2px solid #4caf50;
   border-radius: 8px;
   text-align: center;
-  padding: 20px;
-  width: 32%; /* Each card will take up approximately 32% of the container's width */
+  padding: 10px;
+  width: 31%; /* Each card will take up approximately 32% of the container's width */
   margin-bottom: 20px; /* Adds space between rows */
   transition: all 0.3s ease;
   display: flex; /* Make the card a flexbox */
