@@ -1,4 +1,4 @@
- #contact {
+#contact {
   margin: 10px 0 50px;
  }
   .section-container .main-header {
@@ -25,18 +25,20 @@
   #contact .contact-info {
     flex: 1;
     min-width: 0;
-    padding: 20px 20px 20px 0px;
-    background-color: #f5f5f5;
-    border-right: 1px solid #666;
+    padding: 20px 0 20px 0px;
+    /* background-color: #f5f5f5; */
   }
+  
   
   #contact .contact-form,
   #contact .contact-form {
     flex: 2;
     min-width: 0;
     padding: 20px;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
     border-radius: 0 8px 8px 0;
+    border-left: 1px solid black;
+    padding-left: 50px;
   }
   
   /* Form styling */
@@ -113,7 +115,8 @@
     padding-top: 20px;
     display: flex;
     gap: 25px;               /* Spacing between left and right sections */
-  }
+    align-items: flex-start; /* Align items to the top */
+}
   
 #contact .left_side{
   width: 35%;
@@ -137,4 +140,3 @@
     line-height: 1.6;        /* Line height for better readability */
     margin-bottom: 1rem;     /* Space between paragraphs */
   }
-

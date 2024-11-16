@@ -13,7 +13,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f9;
+    background-color: #ffffff;
     font-family: 'Poppins', sans-serif; /* Apply Poppins font */
 
   }
@@ -45,17 +45,22 @@ html {
 
 /* Adjust the spacing between navbar rows */
 .navbar {
-  font-size: 16px; /* Base font size */
-  padding: 8px 160px; /* Padding for the navbar */
-  background-color: #ffffff; /* Light background color */
+  font-size: 16px;
+  background-color: #ffffff;
   width: 100%;
-  display: flex;
-  justify-content: space-between; /* Aligns logo and toggler properly */
-  align-items: center; /* Center items vertically */
   position: sticky;
   top: 0;
-  z-index: 1000; /* Ensures the navbar stays above other content */
+  z-index: 1000;
   border-bottom: 1px solid #bec4c9;
+}
+
+.navbar .container {
+  max-width: 1024px; /* Same max-width as #about_us */
+  padding: 8px 0; /* Optional vertical padding */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Styling for navbar-toggler button */
@@ -149,17 +154,23 @@ html {
 .under-nav {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  padding: 0 165px;
   width: 100%;
+}
+
+.under-nav .container {
+  max-width: 1024px; /* Same max-width as #about_us and .navbar .container */
+  padding: 0 10px; /* Optional padding for consistent spacing */
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .under-nav .nav-link {
   font-size: 14px;
   color: #000000;
   font-weight: normal;
-  padding: 5px 10px;
-  margin-left: 6px;
+  padding: 5px 15px;
+  margin-left: 0;
 }
 
 .under-nav .nav-link#border-green {
@@ -171,20 +182,20 @@ html {
 footer {
   background-color: #dee4e9;
   color: black;
-  padding: 20px 0 10px 20px;
+  margin: 20px 0 0;
   border-radius: 8px;
-  max-width: 980px; /* Adjust based on your layout */
-  margin: 0 auto; /* Center aligns within the container */
+  padding: 20px 0;
 }
 
 .footer-container {
+  margin: 0 auto; /* Center aligns within the container */
+  max-width: 1024px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  max-width: 100%; /* Ensure it aligns with the footer's width */
-  padding: 0 20px; /* Adjust if needed */
-  margin: 0 auto;
+  padding: 0 30px; /* Adjust if needed */
 }
 
 .footer-section img {
@@ -319,52 +330,109 @@ footer {
     font-weight: 400;
   
   }
-  
-  #about_us{
+  #about_us {
     margin: 20px 0;
     padding-right: 40px;
   }
   
   #about_us .container {
-    width:85%;              /* Limit width to 70% of the screen */
-    margin: 0 auto;          /* Center the container */
-    padding: 20px 0;  
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 30px;
   }
   
-  .head_content{
+  .head_content {
     border-bottom: 1px solid #666;
   }
   
   .head_content h2 {
-    font-size: 1rem;         /* Smaller heading for the "What we do" section */
-    color: #666;             /* Light color for subtitle */
+    font-size: 1rem;
+    color: #666;
     margin-bottom: 10px;
   }
   
   .content {
+    display: flex;           /* Flex layout applied */
+    gap: 20px;
     padding-top: 20px;
-    display: flex;
-    gap: 20px;               /* Spacing between left and right sections */
+    align-items: center;  /* Align items to the top */
   }
   
-.left_side, .right_side {
-  width: 50%;
+  .left_side, .right_side {
+    width: 50%;               /* Each side takes 50% */
+    flex-basis: 50%;          /* Ensures equal width in flex container */
+  }
+
+  .right_side {
+    display: flex;           /* Make the right side a flex container */
+    flex-direction: column;  /* Stack the content vertically */
+    justify-content: center; /* Center content vertically */
+
 }
+  
+  #image-left img {
+    width: 90%; /* Make the image responsive */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 25px;
+  }
 
-
-  /* Left side (Main title) */
   #about_us h1 {
-    font-size: 2.5rem;       /* Large font size for main heading */
-    font-weight: 400;        /* Set weight for readability */
-    color: #53b848;          /* Dark purple color for main text */
-    line-height: 1.2;        /* Tight line height */
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #53b848;
+    line-height: 1.2;
+  }
+
+  #about_us .right_side h2 {
+    font-size: 28px;
+    padding-bottom: 10px;
+    color: #53b848;
+    font-weight: bold;
   }
   
-  /* Right side (Paragraphs) */
   #about_us p {
-    font-size: 1rem;         /* Standard font size for body text */
-    color: #666;             /* Slightly lighter color for readability */
-    line-height: 1.6;        /* Line height for better readability */
-    margin-bottom: 1rem;     /* Space between paragraphs */
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
-
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column; /* Stack left and right sections */
+    }
+  
+    .left_side, .right_side {
+      width: 100%;            /* Full width when stacked */
+    }
+  
+    #about_us h1 {
+      font-size: 2rem;
+    }
+  
+    #about_us p {
+      font-size: 0.9rem;
+    }
+  
+    #about_us .container {
+      width: 90%;
+      padding-right: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #about_us h1 {
+      font-size: 1.5rem;
+    }
+  
+    #about_us p {
+      font-size: 0.8rem;
+    }
+  
+    #about_us {
+      padding-right: 10px;
+    }
+  }
+  
