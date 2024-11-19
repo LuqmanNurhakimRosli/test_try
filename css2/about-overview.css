@@ -62,7 +62,7 @@
     flex: 1;
     text-align: center;
     padding: 20px;
-    border-right: 1px solid #5871ff; /* Border color */
+    border-right: 2px solid #2c46d8; /* Border color */
     /* border-radius: 15px; */
     color: #ffffff;
   }
@@ -80,7 +80,7 @@
   .box h3 {
     font-size: 1.25rem;
     margin: 10px 0;
-    color: #5871ff;
+    color: #1c2c83;
     font-weight: bolder;
   }
   
