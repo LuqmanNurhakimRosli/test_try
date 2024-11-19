@@ -53,7 +53,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    gap: 20px;
+    /* gap: 20px; */
     padding: 2rem 0;;
   }
   
@@ -62,9 +62,13 @@
     flex: 1;
     text-align: center;
     padding: 20px;
-    border: 1px solid #666; /* Border color */
-    border-radius: 15px;
+    border-right: 1px solid #5871ff; /* Border color */
+    /* border-radius: 15px; */
     color: #ffffff;
+  }
+
+  .box:last-child {
+    border-right: none; /* Remove right border for the last box */
   }
   
   .box img {
@@ -76,7 +80,8 @@
   .box h3 {
     font-size: 1.25rem;
     margin: 10px 0;
-    color: #666;
+    color: #5871ff;
+    font-weight: bolder;
   }
   
   .box p {
