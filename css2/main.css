@@ -186,7 +186,7 @@ span {
 /* ---------------------------------------------------------------------- */
 /* Footer Styles */
 footer {
-  background-color: #DEE1DD
+  background-color: #aeafad
 
   ;
   color: black;
@@ -251,7 +251,7 @@ footer {
 .footer-section ul li {
   margin-bottom: 0px;
   font-size: 11px;
-  padding-left: 5px;
+  padding-left: 1.5px;
 }
 
 .footer-section a {
@@ -271,7 +271,7 @@ footer {
 
 .color-gradient {
   background-image: linear-gradient(to right, #FF0000, #0000FF);
-  height: 90px;
+  height: 10px;
 }
 
 @media (max-width: 768px) {
