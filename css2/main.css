@@ -351,73 +351,108 @@ footer {
     font-weight: 400;
   
   }
-  #about_us {
-    margin: 20px 0;
-    padding-right: 40px;
-  }
-  
-  #about_us .container {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 30px;
-  }
-  
-  .head_content {
-    border-bottom: 1px solid #666;
-  }
-  
-  .head_content h2 {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .content {
-    display: flex;           /* Flex layout applied */
-    gap: 20px;
-    padding-top: 20px;
-    align-items: center;  /* Align items to the top */
-  }
-  
-  .left_side, .right_side {
-    width: 50%;               /* Each side takes 50% */
-    flex-basis: 50%;          /* Ensures equal width in flex container */
-  }
-
-  .right_side {
-    display: flex;           /* Make the right side a flex container */
-    flex-direction: column;  /* Stack the content vertically */
-    justify-content: center; /* Center content vertically */
-
+ /* Existing styles for the #about_us section */
+#about_us {
+  margin: 20px 0;
+  padding-right: 40px;
 }
-  
-  #image-left img {
-    width: 90%; /* Make the image responsive */
-    height: auto; /* Keep aspect ratio */
-    border-radius: 25px;
-  }
 
-  #about_us h1 {
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: #53b848;
-    line-height: 1.2;
-  }
+#about_us .container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
 
-  #about_us .right_side h2 {
-    font-size: 28px;
-    padding-bottom: 10px;
-    color: #53b848;
-    font-weight: bold;
+.head_content {
+  border-bottom: 1px solid #666;
+}
+
+.head_content h2 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex; /* Flex layout applied */
+  gap: 20px;
+  padding-top: 20px;
+  align-items: center; /* Align items to the top */
+}
+
+.left_side, .right_side {
+  width: 50%; /* Each side takes 50% */
+  flex-basis: 50%; /* Ensures equal width in flex container */
+}
+
+.right_side {
+  display: flex; /* Make the right side a flex container */
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+#image-left img {
+  width: 90%; /* Make the image responsive */
+  height: auto; /* Keep aspect ratio */
+  border-radius: 25px;
+}
+
+#about_us h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #53b848;
+  line-height: 1.2;
+}
+
+#about_us .right_side h2 {
+  font-size: 28px;
+  padding-bottom: 10px;
+  color: #53b848;
+  font-weight: bold;
+}
+
+#about_us p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Typing animation for the h1 tag */
+.typing-demo {
+  width: 0; /* Start with no width */
+  animation: typing-reverse 4s steps(26) 1s infinite, blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2.5rem; /* Same as #about_us h1 */
+  font-weight: bolder; /* Same as #about_us h1 */
+  color: #53b848; /* Same as #about_us h1 */
+  line-height: 1.2; /* Same as #about_us h1 */
+}
+
+/* Keyframes for typing and reverse typing */
+@keyframes typing-reverse {
+  0% {
+      width: 0;
   }
-  
-  #about_us p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+  50% {
+      width: 22ch;
   }
+  100% {
+      width: 0;
+  }
+}
+
+/* Keyframes for the blinking cursor effect */
+@keyframes blink {
+  50% {
+      border-color: transparent;
+  }
+}
+
   
   /* Responsive adjustments for smaller screens */
   @media (max-width: 768px) {

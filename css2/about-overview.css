@@ -58,18 +58,24 @@
   }
   
   /* Individual box */
+
   .box {
+    position: relative; /* Required for pseudo-elements */
     flex: 1;
     text-align: center;
     padding: 20px;
-    border-right: 2px solid #2c46d8; /* Border color */
-    /* border-radius: 15px; */
     color: #ffffff;
-  }
+}
 
-  .box:last-child {
-    border-right: none; /* Remove right border for the last box */
-  }
+.box:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 20%; /* Adjust to position the shorter border vertically */
+  right: 0;
+  width: 2px; /* Border thickness */
+  height: 70%; /* Make the border 50% of the box height */
+  background-color: #2c46d8; /* Border color */
+}
   
   .box img {
     width: 40px;
