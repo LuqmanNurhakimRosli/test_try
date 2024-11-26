@@ -443,7 +443,7 @@ h1.typing-demo {
 
 .typing-demo {
   width: 0; /* Start with no width */
-  animation: typing-reverse 3s steps(29) 1s infinite, blink .5s step-end infinite alternate;
+  animation: typing-reverse 4s steps(29) 1s infinite, blink .5s step-end infinite alternate;
   overflow: hidden;
   border-right: 3px solid;
   font-weight: bolder;
