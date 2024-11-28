@@ -86,13 +86,14 @@ span {
 }
 
 .navbar .container {
-  max-width: 100%; /* Same max-width as #about_us */
-  padding: 8px 0px 8px 6.25rem; /* Optional vertical padding */
-  margin: 0;
+  max-width: 1200px; /* Restrict the max width for large screens */
+  padding: 8px 3% 8px 0; /* Use percentage for left and right padding */
+  margin: 0 auto; /* Center the navbar content */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 
 /* Styling for navbar-toggler button */
 .navbar-toggler {
