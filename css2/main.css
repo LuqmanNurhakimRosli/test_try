@@ -3,6 +3,17 @@
     box-sizing: border-box;
 }
 
+.prevent-select {
+  -webkit-touch-callout: none; /* iOS */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none;
+ /* Internet Explorer/Edge */
+  user-select: none;
+ /* Generic */
+}
+
 html {
     font-family: 'Poppins', sans-serif; /* Apply Poppins font throughout */
 }
@@ -30,8 +41,7 @@ span {
   #header {
     display: flex; /* Make the header a flex container */
     flex-direction: column; /* Arrange items vertically */
-    padding: 30px;
-    padding-left: 130px; /* Use padding instead of margin for alignment */
+    padding: 30px 40px 30px 50px;
     margin: 0; /* Reset margins to avoid shifting */
     width: 100%; /* Ensure the header spans the full width of the screen */
     box-sizing: border-box; /* Include padding in the width calculation */
@@ -60,6 +70,7 @@ span {
 /* Adjust the spacing between navbar rows */
 .navbar {
   position: relative;
+  
   z-index: 1010;
   font-size: 16px;
   background-color: #ffffff;
@@ -76,9 +87,9 @@ span {
 }
 
 .navbar .container {
-  max-width: 1024px; /* Same max-width as #about_us */
-  padding: 8px 0; /* Optional vertical padding */
-  margin: 0 auto;
+  max-width: 100%; /* Same max-width as #about_us */
+  padding: 8px 0px 8px 100px; /* Optional vertical padding */
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,13 +114,18 @@ span {
   /* border-right: 1px solid #bec4c9; */
   margin-right: 2.5rem;
 }
-
+#navbarNavRow1 {
+  justify-content: end;
+  margin-right: 0; /* Remove excessive right margin */
+  padding-right: 80px; /* Adjust this value to move the navbar leftward */
+}
 
 .navbar-light .navbar-nav .nav-link {
   color: #181616; /* Color of navbar links */
   font-weight: bolder; /* Bold text */
   padding: 10px 15px; /* Padding for links */
   text-decoration: none; /* Remove underline */
+  
 }
 .navbar-nav .nav-link {
   margin-right: 15px; /* Adjust value as needed for spacing */
@@ -309,13 +325,17 @@ footer {
     #about .container {
       width: 1700px; /* Adjust this to change the container's width */
       padding: 10px 20px; /* Adjust padding as needed */
+      text-align: center;
+      position: relative;
+
+
   }
   
   
   #about .image {
       width: 100%; /* Ensure the image takes full width of the container */
       height: 580px; /* Adjust the height to make the image bigger */
-      position: relative;
+
   }
   
   #about .image img {
@@ -325,6 +345,22 @@ footer {
       height: 100%; /* Make image take full height of its parent */
       max-width: 100%; /* Ensure image scales with container */
       border-radius: 8px; /* Keep the rounded corners */
+  }
+
+  #about .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .centered h1 {
+    font-size: 7rem;
+  }
+  .centered h3 {
+    font-size: 1.3rem;
+    font-weight: 200;
   }
   
   #about .box {
@@ -343,6 +379,7 @@ footer {
     justify-content: center; /* Center the content vertically */
     border-radius: 10px;
   }
+
   
   #about .box h3,
   #about .box p {
