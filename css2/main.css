@@ -70,7 +70,6 @@ span {
 /* Adjust the spacing between navbar rows */
 .navbar {
   position: relative;
-  
   z-index: 1010;
   font-size: 16px;
   background-color: #ffffff;
@@ -88,7 +87,7 @@ span {
 
 .navbar .container {
   max-width: 100%; /* Same max-width as #about_us */
-  padding: 8px 0px 8px 100px; /* Optional vertical padding */
+  padding: 8px 0px 8px 6.25rem; /* Optional vertical padding */
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -117,7 +116,7 @@ span {
 #navbarNavRow1 {
   justify-content: end;
   margin-right: 0; /* Remove excessive right margin */
-  padding-right: 80px; /* Adjust this value to move the navbar leftward */
+  padding-right: 4.688rem; /* Adjust this value to move the navbar leftward */
 }
 
 .navbar-light .navbar-nav .nav-link {
