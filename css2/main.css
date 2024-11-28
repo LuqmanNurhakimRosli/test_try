@@ -203,8 +203,9 @@ span {
 
 .under-nav .container {
   max-width: 1024px; /* Same max-width as #about_us and .navbar .container */
-  padding: 0 10px; /* Optional padding for consistent spacing */
-  margin: 0 auto;
+  padding: 0 10px;
+  padding-left: 120px; /* Optional padding for consistent spacing */
+  margin: 0 ;
   display: flex;
   justify-content: flex-start;
 }
@@ -213,7 +214,7 @@ span {
   font-size: 14px;
   color: #000000;
   font-weight: normal;
-  padding: 5px 15px;
+  padding: 10px 15px;
   margin-left: 0;
 }
 
