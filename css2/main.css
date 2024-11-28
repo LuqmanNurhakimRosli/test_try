@@ -87,8 +87,10 @@ span {
 
 .navbar .container {
   max-width: 1200px; /* Restrict the max width for large screens */
-  padding: 8px 3% 8px 0; /* Use percentage for left and right padding */
-  margin: 0 auto; /* Center the navbar content */
+  width: 100%; /* Ensure full width within the max-width */
+  padding: 8px 1.25rem; /* Padding for top, bottom, left, and right */
+  padding-left: 3rem;
+  margin: 0 auto; /* Center the container horizontally */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,10 +116,10 @@ span {
   /* border-right: 1px solid #bec4c9; */
   margin-right: 2.5rem;
 }
+
 #navbarNavRow1 {
   justify-content: end;
-  margin-right: 0; /* Remove excessive right margin */
-  padding-right: 4.688rem; /* Adjust this value to move the navbar leftward */
+  margin-left: 0; /* Remove excessive right margin */
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -201,14 +203,15 @@ span {
   top: 0;
   z-index: 1000;}
 
-.under-nav .container {
-  max-width: 1024px; /* Same max-width as #about_us and .navbar .container */
-  padding: 0 10px;
-  padding-left: 120px; /* Optional padding for consistent spacing */
-  margin: 0 ;
-  display: flex;
-  justify-content: flex-start;
-}
+  .under-nav .container {
+    max-width: 1200px; /* Match the navbar's max-width */
+    width: 100%; /* Ensure it spans the available width */
+    padding: 8px 1.25rem; /* Match the navbar padding */
+    padding-left: 3rem; /* Align with the navbar's left padding */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    align-items: center; /* Align items vertically */
+  }
 
 .under-nav .nav-link {
   font-size: 14px;
