@@ -225,24 +225,25 @@ span {
 /* ---------------------------------------------------------------------- */
 /* Footer Styles */
 footer {
-  background-color: #ffffff
-
-  ;
+  background-color: #ffffff;
   color: black;
-  margin: 20px 0 0;
-  border-radius: 8px;
+  margin: 0;
   padding: 0 0 20px;
+  border-top: 2px solid #53b848;
+  position: relative; /* Keeps the footer in the document flow */
+  width: 100%; /* Ensures the footer takes up full width */
 }
 
+
 .footer-container {
-  margin: 0 auto; /* Center aligns within the container */
-  max-width: 1024px;
-  width: 100%;
+  margin: 0 ; /* Center aligns within the container */
+  max-width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 60px 30px 0; /* Adjust if needed */
+  padding: 40px 80px 20px; /* Adjust if needed */
+  align-items: center;
 }
 
 .footer-section img {
