@@ -76,7 +76,7 @@
     
             <div class="contact-form">
                 <h2>Drop us an enquiry - what would you like to know about?</h2>
-                <form id="contactForm" onsubmit="submitForm(event)">
+                <form id="contactForm" action="contact.php" method="POST">
                     <label for="name">Name*</label>
                     <input type="text" id="name" name="name" required>
                 
@@ -133,58 +133,36 @@
       </div>
   </footer>
 
-<script>
-function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission
 
-    // Create a FormData object to easily get form data
-    const formData = new FormData(document.getElementById('contactForm'));
-
-    // Send the form data using fetch API
-    fetch('contact.php', {  // The PHP script you provided
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())  // Parse the JSON response
-    .then(data => {
-        // Display the response message
-        document.getElementById('responseMessage').innerHTML = data.message;
-        document.getElementById('responseMessage').style.display = 'block';
-        document.getElementById('contactForm').reset(); // Reset the form
-    })
-    .catch(error => console.error('Error:', error));
-}
-</script>
 
 
 </body>
 
 </html>
 
-  
-
 <script>
-function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Create a FormData object to easily get form data
-    const formData = new FormData(document.getElementById('contactForm'));
-
-    // Send the form data using fetch API
-    fetch('contact.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        // Display the response message
-        document.getElementById('responseMessage').innerHTML = data;
-        document.getElementById('responseMessage').style.display = 'block';
-        document.getElementById('contactForm').reset(); // Reset the form
-    })
-    .catch(error => console.error('Error:', error));
-}
-</script>
+    function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Create a FormData object to easily get form data
+        const formData = new FormData(document.getElementById('contactForm'));
+    
+        // Send the form data using fetch API
+        fetch('contact.php', {  // The PHP script you provided
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())  // Parse the JSON response
+        .then(data => {
+            // Display the response message
+            document.getElementById('responseMessage').innerHTML = data.message;
+            document.getElementById('responseMessage').style.display = 'block';
+            document.getElementById('contactForm').reset(); // Reset the form
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+  
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
