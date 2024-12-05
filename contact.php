@@ -1,33 +1,33 @@
 <?php
-header('Content-type: application/json');
+// Collect form data
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$subject = $_POST['subject'] ?? '';
+$message = $_POST['message'] ?? '';
 
-// Default status message
-$status = array(
-    'type' => 'success',
-    'message' => 'Thank you for contacting us. We will get back to you as soon as possible.'
-);
-
-// Sanitize form inputs
-$name = @trim(stripslashes($_POST['name'])); 
-$email = @trim(stripslashes($_POST['email'])); 
-$subject = @trim(stripslashes($_POST['subject'])); 
-$message = @trim(stripslashes($_POST['message'])); 
-
-// Email settings
-$email_from = $email;
-$email_to = 'luqman@dagangnet.com'; // Replace with the recipient's email
-
-$body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Subject: ' . $subject . "\n\n" . 'Message: ' . $message;
-
-// Send the email using PHP's mail() function
-$success = @mail($email_to, $subject, $body, 'From: <'.$email_from.'>');
-
-// If mail sending failed, change status message
-if (!$success) {
-    $status['type'] = 'error';
-    $status['message'] = 'There was an error sending your message. Please try again later.';
+// Validate input
+if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+    echo json_encode(['success' => false, 'message' => 'Please fill in all required fields.']);
+    exit;
 }
 
-// Return the JSON response
-echo json_encode($status);
-die;
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(['success' => false, 'message' => 'Invalid email format.']);
+    exit;
+}
+
+// Construct email message
+$to = 'luqman@dagangnet.com';
+$email_subject = "New contact form submission: $subject";
+$email_body = "You have received a new message from your website contact form.\n\n" .
+    "Here are the details:\n\nName: $name\n\nEmail: $email\n\nSubject: $subject\n\nMessage:\n$message";
+$headers = "From: noreply@yourdomain.com\n";
+$headers .= "Reply-To: $email";
+
+// Send email
+if (mail($to, $email_subject, $email_body, $headers)) {
+    echo json_encode(['success' => true, 'message' => 'Thank you for your message. We will get back to you soon.']);
+} else {
+    echo json_encode(['success' => false, 'message' => 'Oops! Something went wrong and we couldn\'t send your message.']);
+}
+?>
