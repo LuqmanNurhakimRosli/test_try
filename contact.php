@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Collect form data
 $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
@@ -24,10 +28,18 @@ $email_body = "You have received a new message from your website contact form.\n
 $headers = "From: noreply@yourdomain.com\n";
 $headers .= "Reply-To: $email";
 
-// Send email
+// Attempt to send email and log the result
+$log_message = date('Y-m-d H:i:s') . " - Attempting to send email:\n" .
+    "To: $to\nSubject: $email_subject\nBody: $email_body\nHeaders: $headers\n";
+
 if (mail($to, $email_subject, $email_body, $headers)) {
+    $log_message .= "Email sent successfully.\n";
     echo json_encode(['success' => true, 'message' => 'Thank you for your message. We will get back to you soon.']);
 } else {
+    $log_message .= "Failed to send email.\n";
     echo json_encode(['success' => false, 'message' => 'Oops! Something went wrong and we couldn\'t send your message.']);
 }
+
+// Log the attempt
+file_put_contents('email_log.txt', $log_message . "\n", FILE_APPEND);
 ?>

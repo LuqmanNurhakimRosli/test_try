@@ -1,0 +1,76 @@
+2024-12-05 02:20:02 - Attempting to send email:
+To: luqman@dagangnet.com
+Subject: New contact form submission: Approval Form
+Body: You have received a new message from your website contact form.
+
+Here are the details:
+
+Name: Luqman Nurhakim
+
+Email: luqman@dagangnet.com
+
+Subject: Approval Form
+
+Message:
+Your form has been approved!
+Headers: From: noreply@yourdomain.com
+Reply-To: luqman@dagangnet.com
+Email sent successfully.
+
+2024-12-05 02:22:08 - Attempting to send email:
+To: luqman@dagangnet.com
+Subject: New contact form submission: Approval Form
+Body: You have received a new message from your website contact form.
+
+Here are the details:
+
+Name: Luqman Nurhakim
+
+Email: luqman@dagangnet.com
+
+Subject: Approval Form
+
+Message:
+Your form has been approved!
+Headers: From: noreply@yourdomain.com
+Reply-To: luqman@dagangnet.com
+Email sent successfully.
+
+2024-12-05 02:27:46 - Attempting to send email:
+To: luqman@dagangnet.com
+Subject: New contact form submission: Approval Form
+Body: You have received a new message from your website contact form.
+
+Here are the details:
+
+Name: Luqman Nurhakim
+
+Email: luqman@dagangnet.com
+
+Subject: Approval Form
+
+Message:
+Your form has been approved!
+Headers: From: noreply@yourdomain.com
+Reply-To: luqman@dagangnet.com
+Email sent successfully.
+
+2024-12-05 02:28:48 - Attempting to send email:
+To: luqman@dagangnet.com
+Subject: New contact form submission: Approval Form
+Body: You have received a new message from your website contact form.
+
+Here are the details:
+
+Name: jsaijdjiaidsniand
+
+Email: nadyie@dagangnet.com
+
+Subject: Approval Form
+
+Message:
+Your form has been approved!
+Headers: From: noreply@yourdomain.com
+Reply-To: nadyie@dagangnet.com
+Email sent successfully.
+
