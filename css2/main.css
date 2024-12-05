@@ -29,6 +29,22 @@ html {
 
   }
 
+  .h1-text h1{
+    font-size: 1.75rem;
+    margin-top: 20px;
+    color: #53b848;
+    font-weight: bold;
+  }
+
+  #aboutUs .p-text p{
+    font-size: 9rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+
+
 span {
   font-weight: bolder;
   

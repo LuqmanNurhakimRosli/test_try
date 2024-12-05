@@ -76,7 +76,7 @@
     
             <div class="contact-form">
                 <h2>Drop us an enquiry - what would you like to know about?</h2>
-                <form id="contactForm" action="contact.php" method="POST">
+                <form id="contactForm" action="contact.php" method="POST">                    
                     <label for="name">Name*</label>
                     <input type="text" id="name" name="name" required>
                 
@@ -139,7 +139,34 @@
 </body>
 
 </html>
-
+<script>
+    $(document).ready(function() {
+        $('#contactForm').on('submit', function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'contact.php',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    $('#responseMessage').text(response.message)
+                        .removeClass('error success')
+                        .addClass(response.success ? 'success' : 'error')
+                        .show();
+                    if (response.success) {
+                        $('#contactForm')[0].reset();
+                    }
+                },
+                error: function() {
+                    $('#responseMessage').text('An error occurred. Please try again later.')
+                        .removeClass('success')
+                        .addClass('error')
+                        .show();
+                }
+            });
+        });
+    });
+    </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
