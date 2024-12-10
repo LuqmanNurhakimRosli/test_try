@@ -41,26 +41,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // SMTP Configuration
         $mail->isSMTP();
-        $mail->Host = $config['smtp_host'];
+        $mail->Host = "smtp.office365.com";
         $mail->SMTPAuth = true;
-        $mail->Username = $config['smtp_username'];
-        $mail->Password = $config['smtp_password'];
+        $mail->Username = "luqman@dagangnet.com"; // Authenticated account
+        $mail->Password = "Password@2"; // Account password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = $config['smtp_port'];
+        $mail->Port = 587;
+    
+        // Sender and recipient settings
+        $mail->setFrom("luqman@dagangnet.com", "Contact Form"); // Use authenticated account as sender
+        $mail->addAddress("luqman@dagangnet.com", "Luqman");
+        $mail->addReplyTo($email, $name); // Set reply-to as the form submitter's email
 
-        // Email Details
-        $mail->setFrom($config['from_email'], $config['from_name']);
-        $mail->addAddress($config['to_email']);
-        $mail->addReplyTo($email, $name);
-
-        // Email Content
+        // Email content
         $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = '
-            <p><strong>Name:</strong> ' . htmlspecialchars($name) . '</p>
-            <p><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>
-            <p><strong>Message:</strong><br>' . nl2br(htmlspecialchars($message)) . '</p>
-        ';
+        $mail->Subject = "PEML Message from $name";
+        $mail->Body = "
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Message:</strong></p>
+        <p>" . nl2br(htmlspecialchars($message)) . "</p>
+        ";
+
+        $mail->AltBody = "From: $name\nEmail: $email\n\nMessage:\n$message";
 
         $mail->send();
         $response['success'] = true;
