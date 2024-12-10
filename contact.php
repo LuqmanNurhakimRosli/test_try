@@ -6,6 +6,10 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
+// Secure inclusion of config file
+define('SECURE_CONSTANT', true);
+$config = require 'config.php';
+
 $response = [
     'success' => false,
     'message' => ''
@@ -37,17 +41,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // SMTP Configuration
         $mail->isSMTP();
-        $mail->Host = 'smtp.office365.com'; // Adjust based on your provider
+        $mail->Host = $config['smtp_host'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'luqman@dagangnet.com'; // Replace with your email
-        $mail->Password = 'Password@2'; // Replace with your password
+        $mail->Username = $config['smtp_username'];
+        $mail->Password = $config['smtp_password'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        $mail->Port = $config['smtp_port'];
 
         // Email Details
-        $mail->setFrom('luqman@dagangnet.com', 'Ping Energy Marketing'); // Fixed sender email
-        $mail->addAddress('luqman@dagangnet.com'); // Fixed recipient email (your inbox)
-        $mail->addReplyTo($email, $name); // Reply-To set to user's email and name
+        $mail->setFrom($config['from_email'], $config['from_name']);
+        $mail->addAddress($config['to_email']);
+        $mail->addReplyTo($email, $name);
 
         // Email Content
         $mail->isHTML(true);
@@ -62,7 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response['success'] = true;
         $response['message'] = 'Your message has been sent successfully.';
     } catch (Exception $e) {
-        $response['message'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        error_log("Mailer Error: " . $mail->ErrorInfo);
+        $response['message'] = "Message could not be sent. Please try again later.";
     }
 } else {
     $response['message'] = 'Invalid request method.';
