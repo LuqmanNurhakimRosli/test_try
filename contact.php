@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-// Secure inclusion of config file
+// Secure inclusion of the config file
 define('SECURE_CONSTANT', true);
 $config = require 'config.php';
 
@@ -16,10 +16,11 @@ $response = [
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $subject = htmlspecialchars(trim($_POST['subject']));
-    $message = htmlspecialchars(trim($_POST['message']));
+    // Sanitize and collect form data
+    $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    $email = htmlspecialchars(trim($_POST['email'] ?? ''));
+    $subject = htmlspecialchars(trim($_POST['subject'] ?? ''));
+    $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
     // Validate required fields
     if (empty($name) || empty($email) || empty($subject) || empty($message)) {
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Validate email
+    // Validate email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $response['message'] = 'Invalid email address.';
         echo json_encode($response);
@@ -41,30 +42,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // SMTP Configuration
         $mail->isSMTP();
-        $mail->Host = "smtp.office365.com";
+        $mail->Host = $config['smtp_host'];
         $mail->SMTPAuth = true;
-        $mail->Username = "luqman@dagangnet.com"; // Authenticated account
-        $mail->Password = "Password@2"; // Account password
+        $mail->Username = $config['smtp_username'];
+        $mail->Password = $config['smtp_password'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        $mail->Port = $config['smtp_port'];
     
         // Sender and recipient settings
-        $mail->setFrom("luqman@dagangnet.com", "Contact Form"); // Use authenticated account as sender
-        $mail->addAddress("luqman@dagangnet.com", "Luqman");
-        $mail->addReplyTo($email, $name); // Set reply-to as the form submitter's email
+        $mail->setFrom($config['from_email'], $config['from_name']);
+        $mail->addAddress($config['to_email'], "Admin");
+        $mail->addReplyTo($email, $name); // Reply-to set to the form submitter's email
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = "PEML Message from $name";
+        $mail->Subject = "$subject (Message from $name)";
         $mail->Body = "
-        <p><strong>Name:</strong> $name</p>
-        <p><strong>Email:</strong> $email</p>
-        <p><strong>Message:</strong></p>
-        <p>" . nl2br(htmlspecialchars($message)) . "</p>
+            <p><strong>Name:</strong> $name</p>
+            <p><strong>Email:</strong> $email</p>
+            <p><strong>Message:</strong></p>
+            <p>" . nl2br($message) . "</p>
         ";
+        $mail->AltBody = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
-        $mail->AltBody = "From: $name\nEmail: $email\n\nMessage:\n$message";
-
+        // Send the email
         $mail->send();
         $response['success'] = true;
         $response['message'] = 'Your message has been sent successfully.';
@@ -76,4 +77,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $response['message'] = 'Invalid request method.';
 }
 
+// Return the response as JSON
 echo json_encode($response);
