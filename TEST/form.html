@@ -4,15 +4,40 @@
     <title>Contact</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <script>
+        function sendForm(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            const formData = new FormData(event.target); // Collect form data
+
+            fetch('send-email.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text()) // Parse the response as text
+            .then(data => {
+                if (data.includes("Message could not be sent")) {
+                    alert("Failed to send the message. Please try again.");
+                } else {
+                    alert("Message sent successfully!");
+                    event.target.reset(); // Clear the form
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            });
+        }
+    </script>
 </head>
 <body>
     <h1>Contact</h1>
     
-    <form method="post" action="send-email.php">
+    <form id="contactForm" method="post" onsubmit="sendForm(event)">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required>
         
-        <label for="email">email</label>
+        <label for="email">Email</label>
         <input type="email" name="email" id="email" required>
                 
         <label for="message">Message</label>
@@ -20,8 +45,7 @@
         
         <br>
         
-        <button>Send</button>
+        <button type="submit">Send</button>
     </form>
-    
 </body>
 </html>

@@ -1,34 +1,54 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-$name = $_POST["name"];
-$email = $_POST["email"];
-$message = $_POST["message"];
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+// Load Composer's autoloader
 require "vendor/autoload.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+// Collect form data
+$name = $_POST["name"] ?? '';
+$email = $_POST["email"] ?? '';
+$message = $_POST["message"] ?? '';
 
+// Initialize PHPMailer
 $mail = new PHPMailer(true);
 
-// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host = "smtp.office365.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "luqman@dagangnet.com"; // Authenticated account
+    $mail->Password = "Password@2"; // Account password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-$mail->isSMTP();
-$mail->SMTPAuth = true;
+    // Sender and recipient settings
+    $mail->setFrom("luqman@dagangnet.com", "Contact Form"); // Use authenticated account as sender
+    $mail->addAddress("luqman@dagangnet.com", "Luqman");
+    $mail->addReplyTo($email, $name); // Set reply-to as the form submitter's email
 
-$mail->Host = "smtp.example.com";
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 587;
+    // Email content
+    $mail->isHTML(true);
+    $mail->Subject = "New Contact Form Message from $name";
+    $mail->Body = "
+    <p><strong>Name:</strong> $name</p>
+    <p><strong>Email:</strong> $email</p>
+    <p><strong>Message:</strong></p>
+    <p>" . nl2br(htmlspecialchars($message)) . "</p>
+    ";
+    $mail->AltBody = "From: $name\nEmail: $email\n\nMessage:\n$message";
 
-$mail->Username = "you@example.com";
-$mail->Password = "password";
-
-$mail->setFrom($email, $name);
-$mail->addAddress("luqman@dagangnet.com", "Luqman");
-
-$mail->Subject = $subject;
-$mail->Body = $message;
-
-$mail->send();
-
-header("Location: sent.html");
+    // Send the email
+    $mail->send();
+    echo "Message sent successfully";
+} catch (Exception $e) {
+    $errorMessage = "Message could not be sent. Mailer Error: " . $mail->ErrorInfo;
+    error_log($errorMessage); // Log the error
+    echo $errorMessage; // Send error message back to the client
+}
+?>

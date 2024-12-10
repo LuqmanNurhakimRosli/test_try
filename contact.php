@@ -1,45 +1,71 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+header('Content-Type: application/json');
 
-// Collect form data
-$name = $_POST['name'] ?? '';
-$email = $_POST['email'] ?? '';
-$subject = $_POST['subject'] ?? '';
-$message = $_POST['message'] ?? '';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Validate input
-if (empty($name) || empty($email) || empty($subject) || empty($message)) {
-    echo json_encode(['success' => false, 'message' => 'Please fill in all required fields.']);
-    exit;
-}
+require 'vendor/autoload.php';
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(['success' => false, 'message' => 'Invalid email format.']);
-    exit;
-}
+$response = [
+    'success' => false,
+    'message' => ''
+];
 
-// Construct email message
-$to = 'luqman@dagangnet.com';
-$email_subject = "New contact form submission: $subject";
-$email_body = "You have received a new message from your website contact form.\n\n" .
-    "Here are the details:\n\nName: $name\n\nEmail: $email\n\nSubject: $subject\n\nMessage:\n$message";
-$headers = "From: noreply@yourdomain.com\n";
-$headers .= "Reply-To: $email";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $subject = htmlspecialchars(trim($_POST['subject']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
-// Attempt to send email and log the result
-$log_message = date('Y-m-d H:i:s') . " - Attempting to send email:\n" .
-    "To: $to\nSubject: $email_subject\nBody: $email_body\nHeaders: $headers\n";
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        $response['message'] = 'All fields are required.';
+        echo json_encode($response);
+        exit;
+    }
 
-if (mail($to, $email_subject, $email_body, $headers)) {
-    $log_message .= "Email sent successfully.\n";
-    echo json_encode(['success' => true, 'message' => 'Thank you for your message. We will get back to you soon.']);
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $response['message'] = 'Invalid email address.';
+        echo json_encode($response);
+        exit;
+    }
+
+    // Sending email with PHPMailer
+    $mail = new PHPMailer(true);
+
+    try {
+        // SMTP Configuration
+        $mail->isSMTP();
+        $mail->Host = 'smtp.office365.com'; // Adjust based on your provider
+        $mail->SMTPAuth = true;
+        $mail->Username = 'luqman@dagangnet.com'; // Replace with your email
+        $mail->Password = 'Password@2'; // Replace with your password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        // Email Details
+        $mail->setFrom('luqman@dagangnet.com', 'Ping Energy Marketing'); // Fixed sender email
+        $mail->addAddress('luqman@dagangnet.com'); // Fixed recipient email (your inbox)
+        $mail->addReplyTo($email, $name); // Reply-To set to user's email and name
+
+        // Email Content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = '
+            <p><strong>Name:</strong> ' . htmlspecialchars($name) . '</p>
+            <p><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>
+            <p><strong>Message:</strong><br>' . nl2br(htmlspecialchars($message)) . '</p>
+        ';
+
+        $mail->send();
+        $response['success'] = true;
+        $response['message'] = 'Your message has been sent successfully.';
+    } catch (Exception $e) {
+        $response['message'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 } else {
-    $log_message .= "Failed to send email.\n";
-    echo json_encode(['success' => false, 'message' => 'Oops! Something went wrong and we couldn\'t send your message.']);
+    $response['message'] = 'Invalid request method.';
 }
 
-// Log the attempt
-file_put_contents('email_log.txt', $log_message . "\n", FILE_APPEND);
-?>
+echo json_encode($response);
