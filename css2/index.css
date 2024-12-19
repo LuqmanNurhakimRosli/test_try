@@ -1,4 +1,15 @@
 /* General Styles for Snapshot Section */
+
+#snapshot  h2::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the h2 */
+    left: 50%; /* Position it in the middle */
+    transform: translateX(-50%); /* Center it horizontally */
+    bottom: 0; /* Position at the bottom of the heading */
+    width: 15%; /* Set the width of the border to 50% */
+    height: 2px; /* Set the height of the border */
+    background-color: rgb(19, 18, 18); /* Border color */
+}
 #snapshot .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -8,11 +19,13 @@
   }
   
   #snapshot h2 {
-    padding-bottom: 30px;
+    position: relative; /* Positioning context for the pseudo-element */
+    font-size: 2em; /* Adjust font size as needed */
+    margin-bottom: 30px; /* Space below the heading */
+    padding: 10px;
     text-align: center;
     font-weight: bolder;
   }
-  
   /* Snapshot Section */
   #snapshot {
     padding: 60px 0 110px 0;
