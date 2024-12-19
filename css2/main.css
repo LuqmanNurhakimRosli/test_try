@@ -322,20 +322,54 @@ footer {
 }
 
 /* Media Query for Small Screens */
+/* ...existing code... */
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column; /* Stack sections vertically */
     text-align: center; /* Center-align text in each section */
+    align-items: center; /* Center-align items */
+    padding: 10px; /* Reduce padding */
   }
 
   .footer-section {
-    margin-bottom: 20px; /* Add spacing between stacked sections */
+    margin-bottom: 10px; /* Reduce spacing between stacked sections */
+    text-align: center; /* Center-align text */
+    padding: 0; /* Remove padding */
+  }
+
+  .footer-section img {
+    margin: 0 auto 10px; /* Center the image */
+  }
+
+  .footer-section ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
   .footer-section ul li {
     font-size: 12px; /* Slightly smaller font for mobile devices */
+    margin-bottom: 5px; /* Spacing between list items */
+  }
+
+  .footer-section a {
+    color: black; /* Set link color */
+    text-decoration: none; /* Remove underline */
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+
+  .footer-copyright {
+    text-align: center; /* Center-align the copyright text */
+    font-size: 12px; /* Adjust font size */
+    margin-top: 10px; /* Reduce spacing above the copyright text */
   }
 }
+
+/* ...existing code... */
 
 
     /* *************************************************************8 */
@@ -364,6 +398,8 @@ footer {
       max-width: 100%; /* Ensure image scales with container */
       border-radius: 8px; /* Keep the rounded corners */
   }
+
+
 
   #about .centered {
     position: absolute;
@@ -421,6 +457,92 @@ footer {
     font-weight: 400;
   
   }
+/* ...existing code... */
+
+@media (max-width: 768px) {
+  #about .container {
+    width: 100%;
+    padding: 0; /* Remove padding */
+  }
+
+  #about .image {
+    width: 100%;
+    height: auto;
+    padding: 0; /* Remove padding */
+  }
+
+  #about .image img {
+    width: 100%;
+    height: auto;
+    margin: 0; /* Remove margin */
+  }
+
+  #about .box {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .centered h1 {
+    font-size: 3rem;
+  }
+
+  .centered h3 {
+    font-size: 0.8rem;
+  }
+
+  #about .container .image .box h3 {
+    font-size: 1.5em;
+  }
+
+  #about .box p {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  #about .container {
+    width: 100%;
+    padding: 0; /* Remove padding */
+  }
+
+  #about .image {
+    width: 100%;
+    height: auto;
+    padding: 0; /* Remove padding */
+  }
+
+  #about .image img {
+    width: 100%;
+    height: auto;
+    margin: 0; /* Remove margin */
+  }
+
+  #about .box {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .centered h1 {
+    font-size: 2rem;
+  }
+
+  .centered h3 {
+    font-size: 0.6rem;
+  }
+
+  #about .container .image .box h3 {
+    font-size: 1.2em;
+  }
+
+  #about .box p {
+    font-size: 0.7em;
+  }
+}
+
+/* ...existing code... */
+  
  /* Existing styles for the #about_us section */
 #about_us {
   margin: 20px 0;
